@@ -12,7 +12,7 @@ public class SkillsImporter {
     private Sheet skillSheet;
     private int headerRowIndex;
     Row headerRow;
-
+    List<Skill> skills = new ArrayList<>();
 
     public SkillsImporter(String pathName, String skillSheetName, int headerRowIndex){
         openFile(pathName);
@@ -35,21 +35,19 @@ public class SkillsImporter {
 
 
     public List<Skill> importSkills(int skillsCount, int maxRows){
-        List<Skill> skills = new ArrayList<>();
         int rowStart = headerRowIndex + 1;
         int[] pageBreak = skillSheet.getRowBreaks();
         int rowEnd = Math.min(headerRowIndex + maxRows, pageBreak[0] - 1);
 
-        for (int rowNum = rowStart; rowNum < rowEnd; rowNum++){
+        for (int rowNum = rowStart; rowNum < rowEnd; rowNum++) {
             Row row = skillSheet.getRow(rowNum);
-            for (Cell cell: row){
-                if (isSkillCell(cell, headerRowIndex)){
+            for (Cell cell : row) {
+                if (isSkillCell(cell, headerRowIndex)) {
                     skills = saveSkillFromCell(cell, skills);
                 }
             }
+
         }
-
-
         return skills;
     }
 
@@ -65,14 +63,34 @@ public class SkillsImporter {
         }
 
         private  List<Skill> saveSkillFromCell(Cell cell, List<Skill> skills){
-            Skill skill = new Skill();
-            skill.setName(cell.getStringCellValue());
-
+            String text = cell.getStringCellValue();
             Cell rankCell = headerRow.getCell(cell.getColumnIndex());
-            skill.setRank((int)(rankCell.getNumericCellValue()));
+            int rank = (int)(rankCell.getNumericCellValue());
 
-            skills.add(skill);
+            if (!saveExistingSkills(text, rank)){
+                System.out.println("Skill don't exists: " + text);
+                System.out.println("Cell: col: " + cell.getColumnIndex() + " row: " + cell.getRowIndex());
+            }
+
+//            skill.setName(cell.getStringCellValue());
+//
+
 
             return skills;
         }
+
+            private boolean saveExistingSkills(String text, int rank){
+                for (Skill skill: Skill.values()) {
+                    if (text.equalsIgnoreCase(skill.getName())) {
+                        if (skills.contains(skill)){
+
+                        } else {
+                            skill.setRank(rank);
+                            skills.add(skill);
+                        }
+                        return true;
+                    }
+                }
+                return false;
+            }
 }

@@ -11,8 +11,7 @@ public class SkillsManager {
     private List<Skill> skills;
     private SkillsImporter skillsImporter;
 
-    private final String[] MAIN_SKILL_LIST = new String[]
-            {"JAVA", "FRAMEWORKS", "TOOLS", "TESTS", "DATABASES", "CONCEPTS", "OTHER LANGUAGES", "OTHER"};
+
 
 
     public SkillsManager(){
