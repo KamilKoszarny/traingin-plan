@@ -11,7 +11,7 @@ public class App {
 
     App(){
         SkillsManager skillsManager = new SkillsManager();
-        skillsManager.showSkills();
+        skillsManager.showSkillsReq();
     }
 
     public static void main(String[] args) {

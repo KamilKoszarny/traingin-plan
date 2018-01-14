@@ -1,164 +1,199 @@
+import java.util.ArrayList;
+
 public enum Skill {
 
-    //1st level
-    JAVA ("Java", 1, null),
-        //2nd level
-        BASICS("Basics", 2, JAVA),
-            //3rd level
-            LANG_BASICS("Language basics", 3, BASICS),
-            OOP_IN_JAVA("OOP in Java", 3, BASICS),
-            CLASSES("Classes", 3, BASICS),
-            GUI("GUI", 3, BASICS),
-        ADVANCED("Advanced", 2, JAVA),
-            GENERICS("Generics", 3, ADVANCED),
-            JAVA8("Java 8", 3, ADVANCED),
-            COLLECTIONS("Collections", 3, ADVANCED),
-            ALGOTHITMS("Algorithms", 3, ADVANCED),
-            SERVLETS("Servlets", 3, ADVANCED),
-        COMMERCIAL("Commercial", 2, JAVA),
-            JEE("JEE", 3, COMMERCIAL),
-                EJB("EJB", 4, JEE),
-            J2EE("J2EE", 3, COMMERCIAL),
-            SERVLET("Servlet", 3, COMMERCIAL),
-            ANT("Ant", 3, COMMERCIAL),
-            JMS("JMS", 3, COMMERCIAL),
-            REST("REST", 3, COMMERCIAL),
-                REST_ASSURED("REST Assured", 3, REST),
-            Graph_QL("GraphQL", 3, COMMERCIAL),
-            JPA("JPA", 3, COMMERCIAL),
+//o layer
+JAVA ("Java", 0, null, 8),
+    //1st layer
+    LANGUAGE ("Language", 1, JAVA, 10),
+        //2nd layer
+        BASICS("Basics", 2, LANGUAGE, 8),
+            //3rd layer
+            LANG_BASICS("Language basics", 3, BASICS, 5),
+            OOP_IN_JAVA("OOP in Java", 3, BASICS, 4),
+            CLASSES("Classes", 3, BASICS, 6),
+            GUI("GUI", 3, BASICS, 2),
+        ADVANCED("Advanced", 2, LANGUAGE, 4),
+            PATTERNS("Design patterns", 3, ADVANCED, 9),
+            GENERICS("Generics", 3, ADVANCED, 8),
+            JAVA8("Java 8", 3, ADVANCED, 6),
+            COLLECTIONS("Collections", 3, ADVANCED, 7),
+            ALGORITHMS("Algorithms", 3, ADVANCED, 8),
+            SERVLETS("Servlets", 3, ADVANCED, 5),
+        COMMERCIAL("Commercial", 2, LANGUAGE, 6),
+            JEE("JEE", 3, COMMERCIAL, 7),
+                EJB("EJB", 4, JEE, 5),
+            J2EE("J2EE", 3, COMMERCIAL, 9),
+            SERVLET("Servlet", 3, COMMERCIAL, 5),
+            ANT("Ant", 3, COMMERCIAL, 5),
+            JMS("JMS", 3, COMMERCIAL, 6),
+            REST("REST", 3, COMMERCIAL, 6),
+                REST_ASSURED("REST Assured", 4, REST, 4),
+            Graph_QL("GraphQL", 3, COMMERCIAL, 3),
+            JPA("JPA", 3, COMMERCIAL, 4),
 
-    FRAMEWORKS ("Frameworks", 1, null),
-        SPRING("Spring", 2, FRAMEWORKS),
-            SPRING_BOOT("Spring Boot", 3, SPRING),
-            SPRING_WEBFLOW("Spring Webflow", 3, SPRING),
-            SPRING_WEBSERVICES("Spring WebServices", 3, SPRING),
-            SPRING4("Spring 4", 3, SPRING),
-        HIBERNATE("Hibernate", 2, FRAMEWORKS),
-        JSF("JSF", 2, FRAMEWORKS),
-        STRUTS("Struts", 2, FRAMEWORKS),
+    FRAMEWORKS ("Frameworks", 1, JAVA, 8),
+        SPRING("Spring", 2, FRAMEWORKS, 7),
+            SPRING_BOOT("Spring Boot", 3, SPRING, 7),
+            SPRING_WEBFLOW("Spring Webflow", 3, SPRING, 5),
+            SPRING_WEBSERVICES("Spring WebServices", 3, SPRING, 6),
+            SPRING4("Spring 4", 3, SPRING, 6),
+        HIBERNATE("Hibernate", 2, FRAMEWORKS, 6),
+        JSF("JSF", 2, FRAMEWORKS, 5),
+        STRUTS("Struts", 2, FRAMEWORKS, 4),
 
-    TOOLS ("Tools", 1, null),
-        VERSION_CONTROL("Version Control", 2, TOOLS),
-            GIT("Git", 3, VERSION_CONTROL),
-                GIT_FLOW("GitFlow", 4, GIT),
-                BITBUCKET("Bitbucket", 4, GIT),
-                GIT_LAB("GitLab", 4, GIT),
-                GIT_HUB("GitHub", 4, GIT),
-            SVN("SVN", 3, VERSION_CONTROL),
-        PROJECT_MANAGEMENT("Project Management", 2, TOOLS),
-            MAVEN("Maven", 3, PROJECT_MANAGEMENT),
-            JIRA("JIRA", 3, PROJECT_MANAGEMENT),
-            REDMINE("Redmine", 3, PROJECT_MANAGEMENT),
-            CONFLUENCE("Confluence", 3, PROJECT_MANAGEMENT),
-        IDE("IDE", 2, TOOLS),
-            INTELLIJ("IntelliJ", 3, IDE),
-            ECLIPSE("Eclipse", 3, IDE),
-            NETBEANS("NetBeans", 3, IDE),
-        AUTOMATION("Automation", 2, TOOLS),
-            JENKINS("Jenkins", 3, AUTOMATION),
-            GRADLE("Gradle", 3, AUTOMATION),
-            DOCKER("Docker", 3, AUTOMATION),
-            BAMBOO("Bamboo", 3, AUTOMATION),
-            HUDSON("Hudson", 3, AUTOMATION),
-            KAFKA("Kafka", 3, AUTOMATION),
-        OTHER_TOOLS("Other tools", 2, TOOLS),
-            WEBLOGIC("WebLogic", 3, OTHER_TOOLS),
-            ELASTICSEARCH("Elasticsearch", 3, OTHER_TOOLS),
-                KIBANA("Kibana", 4, OTHER_TOOLS),
-            LOGSTASH("Logstash", 3, OTHER_TOOLS),
+    TOOLS ("Tools", 1, JAVA, 5),
+        VERSION_CONTROL("Version Control", 2, TOOLS, 7),
+            GIT("Git", 3, VERSION_CONTROL, 9),
+                GIT_FLOW("GitFlow", 4, GIT, 4),
+                BITBUCKET("Bitbucket", 4, GIT, 5),
+                GIT_LAB("GitLab", 4, GIT, 5),
+                GIT_HUB("GitHub", 4, GIT, 5),
+            SVN("SVN", 3, VERSION_CONTROL, 4),
+        PROJECT_MANAGEMENT("Project Management", 2, TOOLS, 6),
+            MAVEN("Maven", 3, PROJECT_MANAGEMENT, 7),
+            JIRA("JIRA", 3, PROJECT_MANAGEMENT, 6),
+            REDMINE("Redmine", 3, PROJECT_MANAGEMENT, 6),
+            CONFLUENCE("Confluence", 3, PROJECT_MANAGEMENT, 5),
+        IDE("IDE", 2, TOOLS, 8),
+            INTELLIJ("IntelliJ", 3, IDE, 9),
+            ECLIPSE("Eclipse", 3, IDE, 3),
+            NETBEANS("NetBeans", 3, IDE, 6),
+        AUTOMATION("Automation", 2, TOOLS, 6),
+            JENKINS("Jenkins", 3, AUTOMATION, 6),
+            GRADLE("Gradle", 3, AUTOMATION, 7),
+            DOCKER("Docker", 3, AUTOMATION, 8),
+            BAMBOO("Bamboo", 3, AUTOMATION, 3),
+            HUDSON("Hudson", 3, AUTOMATION, 4),
+            KAFKA("Kafka", 3, AUTOMATION, 5),
+        OTHER_TOOLS("Other tools", 2, TOOLS, 4),
+            WEBLOGIC("WebLogic", 3, OTHER_TOOLS, 6),
+            ELASTICSEARCH("Elasticsearch", 3, OTHER_TOOLS, 8),
+                KIBANA("Kibana", 4, OTHER_TOOLS, 7),
+            LOGSTASH("Logstash", 3, OTHER_TOOLS, 5),
 
-    TESTS ("Tests", 1, null),
-        JUNIT("JUnit", 2, TESTS),
-            TEST_NG("TestNG", 3, JUNIT),
-        HAMCREST("Hamcrest", 2, TESTS),
-        MOCKITO("Mockito", 2, TESTS),
+    TESTS ("Tests", 1, JAVA, 4),
+        JUNIT("JUnit", 2, TESTS, 8),
+            TEST_NG("TestNG", 3, JUNIT, 7),
+        HAMCREST("Hamcrest", 2, TESTS, 6),
+        MOCKITO("Mockito", 2, TESTS, 6),
 
-    DATABASES ("Data Bases", 1, null),
-        SQL("SQL", 2, DATABASES),
-            MY_SQL("MySQL", 3, SQL),
-            POSTGRE_SQL("PostgreSQL", 3, SQL),
-        ORACLE("Oracle", 2, DATABASES),
-        JDBC("JDBC", 2, DATABASES),
-            MY_BATIS("MyBatis", 3, JDBC),
+    DATABASES ("Data Bases", 1, JAVA, 4),
+        SQL("SQL", 2, DATABASES, 6),
+            MY_SQL("MySQL", 3, SQL, 6),
+            POSTGRE_SQL("PostgreSQL", 3, SQL, 8),
+        ORACLE("Oracle", 2, DATABASES, 8),
+        JDBC("JDBC", 2, DATABASES, 7),
+            MY_BATIS("MyBatis", 3, JDBC, 6),
 
-    CONCEPTS("Concepts", 1, null),
-        HARD_CONCEPTS("Hard Concepts", 2, CONCEPTS),
-            OOP("OOP", 3, HARD_CONCEPTS),
-            CLEAN_CODE("Clean Code", 3, HARD_CONCEPTS),
-            MACHINE_LEARNING("Machine learning", 3, HARD_CONCEPTS),
-            FUNCTIONAL_PROGRAMMING("Functional Programming", 3, HARD_CONCEPTS),
-            WEB_SERVICES("WebServices", 3, HARD_CONCEPTS),
-            MVC("MVC", 3, HARD_CONCEPTS),
-        SOFT_CONCEPTS("Soft", 2, CONCEPTS),
-            AGILE("Agile", 3, SOFT_CONCEPTS),
-                SCRUM("SCRUM", 4, AGILE),
-            SOA("SOA", 3, SOFT_CONCEPTS),
-            CONTINOUS_DELIVERY("Continuous Delivery", 3, SOFT_CONCEPTS),
-            CONTINOUS_INTEGRATION("Continuous Integration", 3, SOFT_CONCEPTS),
+    CONCEPTS("Concepts", 1, JAVA, 3),
+        HARD_CONCEPTS("Hard Concepts", 2, CONCEPTS, 8),
+            OOP("OOP", 3, HARD_CONCEPTS, 8),
+            CLEAN_CODE("Clean Code", 3, HARD_CONCEPTS, 7),
+            MACHINE_LEARNING("Machine learning", 3, HARD_CONCEPTS, 6),
+            FUNCTIONAL_PROGRAMMING("Functional Programming", 3, HARD_CONCEPTS, 4),
+            WEB_SERVICES("WebServices", 3, HARD_CONCEPTS, 5),
+            MVC("MVC", 3, HARD_CONCEPTS, 6),
+        SOFT_CONCEPTS("Soft", 2, CONCEPTS, 6),
+            AGILE("Agile", 3, SOFT_CONCEPTS, 6),
+                SCRUM("SCRUM", 4, AGILE, 9),
+            SOA("SOA", 3, SOFT_CONCEPTS, 7),
+            CONTINOUS_DELIVERY("Continuous Delivery", 3, SOFT_CONCEPTS, 7),
+            CONTINOUS_INTEGRATION("Continuous Integration", 3, SOFT_CONCEPTS, 8),
 
-    LANGUAGES("Languages (other than Java)", 1, null),
-        JS("JavaScript", 2, LANGUAGES),
-            JS_FRAMEWORKS("JS Frameworks", 3, JS),
-                ANGULAR("Angular", 4, JS_FRAMEWORKS),
-                REACT("React", 4, JS_FRAMEWORKS),
-                NODE("Node", 4, JS_FRAMEWORKS),
-            JS_TOOLS("JS Tools", 3, JS),
-                NPM("npm", 4, JS_TOOLS),
-                GWT("GWT", 4, JS_TOOLS),
-            JS_OTHER("JS Other", 3, JS),
-                JQUERY("JQuery", 4, JS_OTHER),
-                TYPESCRIPT("TypeScript", 4, JS_OTHER),
-        WEB("HTML/CSS", 2, LANGUAGES),
-            HTML("HTML", 3, WEB),
-                HTML5("HTML 5", 4, HTML),
-                THYMELEAF("Thymeleaf", 4, HTML),
-            CSS("CSS", 3, WEB),
-                RWD("RWD", 4, CSS),
-            CMS("CMS", 3, WEB),
-            XML("XML", 3, WEB),
-                SOAP("SOAP", 4, XML),
-        OTHER_LANGUAGES("Other", 2, LANGUAGES),
-            PYTHON("Python", 3, OTHER_LANGUAGES),
-            CPP("C++", 3, OTHER_LANGUAGES),
-            SCALA("Scala", 3, OTHER_LANGUAGES),
-            KAREL("KAREL", 3, OTHER_LANGUAGES),
-        SMALL_LANGUAGES("\"Small\" langueages", 2, LANGUAGES),
-            JSON("JSON", 3, SMALL_LANGUAGES),
-            UML("UML", 3, SMALL_LANGUAGES),
-            MQ("MQ", 3, SMALL_LANGUAGES),
+    OTHER_LANGUAGES("Languages (other than Java)", 1, JAVA, 2),
+        JS("JavaScript", 2, OTHER_LANGUAGES, 8),
+            JS_FRAMEWORKS("JS Frameworks", 3, JS, 7),
+                ANGULAR("Angular", 4, JS_FRAMEWORKS, 8),
+                REACT("React", 4, JS_FRAMEWORKS, 7),
+                NODE("Node", 4, JS_FRAMEWORKS, 5),
+            JS_TOOLS("JS Tools", 3, JS, 5),
+                NPM("npm", 4, JS_TOOLS, 7),
+                GWT("GWT", 4, JS_TOOLS, 5),
+            JS_OTHER("JS Other", 3, JS, 7),
+                JQUERY("JQuery", 4, JS_OTHER, 8),
+                TYPESCRIPT("TypeScript", 4, JS_OTHER, 8),
+        WEB("HTML/CSS", 2, OTHER_LANGUAGES, 7),
+            HTML("HTML", 3, WEB, 7),
+                HTML5("HTML 5", 4, HTML, 8),
+                THYMELEAF("Thymeleaf", 4, HTML, 6),
+            CSS("CSS", 3, WEB, 6),
+                RWD("RWD", 4, CSS, 5),
+            CMS("CMS", 3, WEB, 4),
+            XML("XML", 3, WEB, 5),
+                SOAP("SOAP", 4, XML, 5),
+        OTHER_OTHER_LANGUAGES("Other", 2, OTHER_LANGUAGES, 6),
+            PYTHON("Python", 3, OTHER_OTHER_LANGUAGES, 8),
+            CPP("C++", 3, OTHER_OTHER_LANGUAGES, 5),
+            SCALA("Scala", 3, OTHER_OTHER_LANGUAGES, 6),
+            KAREL("KAREL", 3, OTHER_OTHER_LANGUAGES, 2),
+        SMALL_LANGUAGES("\"Small\" langueages", 2, OTHER_LANGUAGES, 5),
+            JSON("JSON", 3, SMALL_LANGUAGES, 6),
+            UML("UML", 3, SMALL_LANGUAGES, 9),
+            MQ("MQ", 3, SMALL_LANGUAGES, 5),
 
-    OTHER("Other skills", 1, null),
-        OS("Operating systems", 2, OTHER),
-            WINDOWS("Windows", 3, OS),
-                CMD("cmd", 4, WINDOWS),
-            MAC("Mac", 3, OS),
-            LINUX("Linux", 3, OS),
-        BIG_DATA("BigData", 2, OTHER),
-            MAP_REDUCE("MapReduce", 3, BIG_DATA),
-            SPARK("Spark", 3, BIG_DATA),
-        MISC("Miscellaneous", 2, OTHER),
-            DWH("DWH", 3, MISC),
-            SOLR("SOLR", 3, MISC),
-            CLOUD("Cloud", 3, MISC),
-            GRAFANA("Grafana", 3, MISC),
-            SAP_HYBRIS("SAP Hybris", 3, MISC);
+    OTHER("Other skills", 1, JAVA, 2),
+        OS("Operating systems", 2, OTHER, 8),
+            WINDOWS("Windows", 3, OS, 6),
+                CMD("cmd", 4, WINDOWS, 6),
+            MAC("Mac", 3, OS, 5),
+            LINUX("Linux", 3, OS, 8),
+        BIG_DATA("BigData", 2, OTHER, 6),
+            MAP_REDUCE("MapReduce", 3, BIG_DATA, 6),
+            SPARK("Spark", 3, BIG_DATA, 6),
+        MISC("Miscellaneous", 2, OTHER, 6),
+            DWH("DWH", 3, MISC, 5),
+            SOLR("SOLR", 3, MISC, 5),
+            CLOUD("Cloud", 3, MISC, 6),
+            GRAFANA("Grafana", 3, MISC, 6),
+            SAP_HYBRIS("SAP Hybris", 3, MISC, 4);
 
 
     private String name;
-    private int level;
+    private int layer;
     private int occurencies;
-    private int rank;
+    private double reqPoints;
     private Skill superSkill;
-    private Skill[] subSkills;
+    private ArrayList<Skill> subSkills = new ArrayList<>();
+    private int impactOnSuperSkill; //1-10
 
 
-    Skill(String name, int level, Skill superSkill){
+    Skill(String name, int layer, Skill superSkill, int impactOnSuperSkill){
         this.name = name;
-        this.level = level;
+        this.layer = layer;
         this.superSkill = superSkill;
+        this.impactOnSuperSkill = impactOnSuperSkill;
     }
 
 
+    //add///////////////////////////////////////////////////////////////////////////////////
+
+    public void addReqPointsByRank(int rank, int offersCount) {
+        reqPoints += 1/(3 + (double)rank)/(double)offersCount * 50;
+        reqPoints = Math.round(reqPoints);
+
+    }
+
+    public void addOccurence() {
+        this.occurencies ++;
+    }
+
+    public void addSubSkill(Skill subSkill) {
+        subSkills.add(subSkill);
+    }
+
+    public void addReqPointsBySuperSkill(){
+        reqPoints += superSkill.getReqPoints() * impactOnSuperSkill / 10;
+    }
+
+    public void addReqPointsBySubSkills() {
+        double pointsFromSubskills = 0;
+        for (Skill subskill: subSkills) {
+            pointsFromSubskills += subskill.getReqPoints() * subskill.getImpactOnSuperSkill() / subSkills.size() / 10;
+        }
+        reqPoints += pointsFromSubskills;
+        reqPoints = Math.round(reqPoints);
+    }
 
     //get/set////////////////////////////////////////////////////////////////////////////////////
 
@@ -170,28 +205,20 @@ public enum Skill {
         this.name = name;
     }
 
-    public int getLevel() {
-        return level;
+    public int getLayer() {
+        return layer;
     }
 
-    public void setLevel(int level) {
-        this.level = level;
+    public void setLayer(int layer) {
+        this.layer = layer;
     }
 
     public int getOccurencies() {
         return occurencies;
     }
 
-    public void setOccurencies(int occurencies) {
-        this.occurencies = occurencies;
-    }
-
-    public int getRank() {
-        return rank;
-    }
-
-    public void setRank(int rank) {
-        this.rank = rank;
+    public double getReqPoints() {
+        return reqPoints;
     }
 
     public Skill getSuperSkill() {
@@ -202,11 +229,11 @@ public enum Skill {
         this.superSkill = superSkill;
     }
 
-    public Skill[] getSubSkills() {
+    public ArrayList<Skill> getSubSkills() {
         return subSkills;
     }
 
-    public void setSubSkills(Skill[] subSkills) {
-        this.subSkills = subSkills;
+    public int getImpactOnSuperSkill() {
+        return impactOnSuperSkill;
     }
 }

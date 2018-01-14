@@ -3,22 +3,26 @@ import org.apache.poi.ss.usermodel.*;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
-public class SkillsImporter {
+public class SkillsReqImporter {
+
+    private final int HEADER_ROW_INDEX = 1;
+    private final int MAX_ROWS = 100;
+    private final String skillsFilePath = "../Plan.xlsx";
+    private final String skillSheetName = "Job requirements";
+    private int offersCount = 0;
 
     private Workbook workbook;
     private Sheet skillSheet;
-    private int headerRowIndex;
     Row headerRow;
-    List<Skill> skills = new ArrayList<>();
+    Set<Skill> skills;
 
-    public SkillsImporter(String pathName, String skillSheetName, int headerRowIndex){
-        openFile(pathName);
+    public SkillsReqImporter(Set<Skill> skills){
+        openFile(skillsFilePath);
         openSheet(skillSheetName);
-        this.headerRowIndex = headerRowIndex;
-        headerRow = skillSheet.getRow(headerRowIndex);
+        this.skills = skills;
+        headerRow = skillSheet.getRow(HEADER_ROW_INDEX);
     }
 
         private void openFile(String pathName){
@@ -34,16 +38,16 @@ public class SkillsImporter {
         }
 
 
-    public List<Skill> importSkills(int skillsCount, int maxRows){
-        int rowStart = headerRowIndex + 1;
+    public Set<Skill> importSkillsReq(){
+        int rowStart = HEADER_ROW_INDEX + 1;
         int[] pageBreak = skillSheet.getRowBreaks();
-        int rowEnd = Math.min(headerRowIndex + maxRows, pageBreak[0] - 1);
+        int rowEnd = Math.min(HEADER_ROW_INDEX + MAX_ROWS, pageBreak[0] + 1);
 
         for (int rowNum = rowStart; rowNum < rowEnd; rowNum++) {
             Row row = skillSheet.getRow(rowNum);
             for (Cell cell : row) {
-                if (isSkillCell(cell, headerRowIndex)) {
-                    skills = saveSkillFromCell(cell, skills);
+                if (countOffersAndCheckIfCellIsText(cell)) {
+                    skills = tryToSaveSkillReqFromCell(cell, skills);
                 }
             }
 
@@ -51,43 +55,35 @@ public class SkillsImporter {
         return skills;
     }
 
-        private boolean isSkillCell(Cell cell, int headerRowIndex){
+        private boolean countOffersAndCheckIfCellIsText(Cell cell){
             if (cell == null)
                 return false;
             else if (cell.getCellTypeEnum() != CellType.STRING)
                 return false;
-            else if (cell.getStringCellValue().contains("http"))
+            else if (cell.getStringCellValue().contains("http")) {
+                offersCount ++;
                 return false;
-            else
+            }else
                 return true;
         }
 
-        private  List<Skill> saveSkillFromCell(Cell cell, List<Skill> skills){
+        private  Set<Skill> tryToSaveSkillReqFromCell(Cell cell, Set<Skill> skills){
             String text = cell.getStringCellValue();
             Cell rankCell = headerRow.getCell(cell.getColumnIndex());
             int rank = (int)(rankCell.getNumericCellValue());
 
-            if (!saveExistingSkills(text, rank)){
+            if (!saveSkillsReq(text, rank)){
                 System.out.println("Skill don't exists: " + text);
                 System.out.println("Cell: col: " + cell.getColumnIndex() + " row: " + cell.getRowIndex());
             }
-
-//            skill.setName(cell.getStringCellValue());
-//
-
-
             return skills;
         }
 
-            private boolean saveExistingSkills(String text, int rank){
-                for (Skill skill: Skill.values()) {
+            private boolean saveSkillsReq(String text, int rank){
+                for (Skill skill: skills) {
                     if (text.equalsIgnoreCase(skill.getName())) {
-                        if (skills.contains(skill)){
-
-                        } else {
-                            skill.setRank(rank);
-                            skills.add(skill);
-                        }
+                            skill.addReqPointsByRank(rank, offersCount);
+                            skill.addOccurence();
                         return true;
                     }
                 }
