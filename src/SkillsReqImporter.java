@@ -7,11 +7,17 @@ import java.util.Set;
 
 public class SkillsReqImporter {
 
-    private final int HEADER_ROW_INDEX = 1;
+    private final int HEADER_ROW_INDEX = 0;
     private final int MAX_ROWS = 100;
     private final String skillsFilePath = "../Plan.xlsx";
     private final String skillSheetName = "Job requirements";
-    private int offersCount = 0;
+    private int linkColumnIndex;
+    private int levelColumnIndex;
+    private int companyColumnIndex;
+    private int placeColumnIndex;
+    private int commentsColumnIndex;
+    private int allOffersCount = 0;
+    private int levelOffersCount = 0;
 
     private Workbook workbook;
     private Sheet skillSheet;
@@ -23,6 +29,7 @@ public class SkillsReqImporter {
         openSheet(skillSheetName);
         this.skills = skills;
         headerRow = skillSheet.getRow(HEADER_ROW_INDEX);
+        findColumns();
     }
 
         private void openFile(String pathName){
@@ -37,53 +44,95 @@ public class SkillsReqImporter {
             skillSheet = workbook.getSheet(skillSheetName);
         }
 
-
-    public Set<Skill> importSkillsReq(){
-        int rowStart = HEADER_ROW_INDEX + 1;
-        int[] pageBreak = skillSheet.getRowBreaks();
-        int rowEnd = Math.min(HEADER_ROW_INDEX + MAX_ROWS, pageBreak[0] + 1);
-
-        for (int rowNum = rowStart; rowNum < rowEnd; rowNum++) {
-            Row row = skillSheet.getRow(rowNum);
-            for (Cell cell : row) {
-                if (countOffersAndCheckIfCellIsText(cell)) {
-                    skills = tryToSaveSkillReqFromCell(cell, skills);
+        private void findColumns(){
+            for (Cell cell: headerRow) {
+                if (cellIsString(cell)){
+                    if (cell.getStringCellValue().equalsIgnoreCase("link"))
+                        linkColumnIndex = cell.getColumnIndex();
+                    if (cell.getStringCellValue().equalsIgnoreCase("level"))
+                        levelColumnIndex = cell.getColumnIndex();
+                    if (cell.getStringCellValue().equalsIgnoreCase("place"))
+                        placeColumnIndex = cell.getColumnIndex();
+                    if (cell.getStringCellValue().equalsIgnoreCase("company"))
+                        companyColumnIndex = cell.getColumnIndex();
+                    if (cell.getStringCellValue().equalsIgnoreCase("comments"))
+                        commentsColumnIndex = cell.getColumnIndex();
                 }
             }
-
         }
+
+
+    public Set<Skill> importSkillsReq(ReqLvl reqLvl){
+        int rowStart = HEADER_ROW_INDEX + 1;
+        allOffersCount = Math.min(HEADER_ROW_INDEX + MAX_ROWS, skillSheet.getLastRowNum());
+
+        for (int rowNum = rowStart; rowNum < allOffersCount + 1; rowNum++) {
+            Row row = skillSheet.getRow(rowNum);
+            if (row.getCell(levelColumnIndex).getStringCellValue().equalsIgnoreCase(reqLvl.toString())) {
+                levelOffersCount++;
+            }
+        }
+
+        for (int rowNum = rowStart; rowNum < allOffersCount + 1; rowNum++) {
+            Row row = skillSheet.getRow(rowNum);
+            if (row.getCell(levelColumnIndex).getStringCellValue().equalsIgnoreCase(reqLvl.toString())) {
+                for (Cell cell : row) {
+                    if (cellIsString(cell)) {
+                        handleStringCell(cell);
+                    }
+                }
+            }
+        }
+
+        System.out.println("All offers: " + allOffersCount);
+        System.out.println("Level: " + reqLvl.toString());
+        System.out.println("Offers considered: " + levelOffersCount);
         return skills;
     }
 
-        private boolean countOffersAndCheckIfCellIsText(Cell cell){
+        private boolean cellIsString(Cell cell){
             if (cell == null)
                 return false;
             else if (cell.getCellTypeEnum() != CellType.STRING)
                 return false;
-            else if (cell.getStringCellValue().contains("http")) {
-                offersCount ++;
-                return false;
-            }else
+            else
                 return true;
         }
 
+        private void handleStringCell(Cell cell){
+            if (cell.getColumnIndex() > commentsColumnIndex)
+                skills = tryToSaveSkillReqFromCell(cell, skills);
+        }
+
+
         private  Set<Skill> tryToSaveSkillReqFromCell(Cell cell, Set<Skill> skills){
             String text = cell.getStringCellValue();
-            Cell rankCell = headerRow.getCell(cell.getColumnIndex());
-            int rank = (int)(rankCell.getNumericCellValue());
+            Cell pointsCell = cell.getRow().getCell(cell.getColumnIndex() + 1);
+            int points = (int)(pointsCell.getNumericCellValue());
 
-            if (!saveSkillsReq(text, rank)){
+            if (skillExists(text)){
+                saveSkillReq(text, points);
+            } else{
                 System.out.println("Skill don't exists: " + text);
                 System.out.println("Cell: col: " + cell.getColumnIndex() + " row: " + cell.getRowIndex());
             }
             return skills;
         }
 
-            private boolean saveSkillsReq(String text, int rank){
+            private boolean skillExists(String text){
                 for (Skill skill: skills) {
                     if (text.equalsIgnoreCase(skill.getName())) {
-                            skill.addReqPointsByRank(rank, offersCount);
-                            skill.addOccurence();
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            private boolean saveSkillReq(String text, int points){
+                for (Skill skill: skills) {
+                    if (text.equalsIgnoreCase(skill.getName())) {
+                        skill.addReqPoints(points, levelOffersCount);
+                        skill.addOccurence();
                         return true;
                     }
                 }

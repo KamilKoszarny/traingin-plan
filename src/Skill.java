@@ -66,17 +66,20 @@ JAVA ("Java", 0, null, 8),
             BAMBOO("Bamboo", 3, AUTOMATION, 3),
             HUDSON("Hudson", 3, AUTOMATION, 4),
             KAFKA("Kafka", 3, AUTOMATION, 5),
+            POSTMAN("Postman", 3, AUTOMATION, 4),
         OTHER_TOOLS("Other tools", 2, TOOLS, 4),
             WEBLOGIC("WebLogic", 3, OTHER_TOOLS, 6),
             ELASTICSEARCH("Elasticsearch", 3, OTHER_TOOLS, 8),
                 KIBANA("Kibana", 4, OTHER_TOOLS, 7),
             LOGSTASH("Logstash", 3, OTHER_TOOLS, 5),
+            TOMCAT("TomCat", 3, OTHER_TOOLS, 5),
 
     TESTS ("Tests", 1, JAVA, 4),
         JUNIT("JUnit", 2, TESTS, 8),
             TEST_NG("TestNG", 3, JUNIT, 7),
         HAMCREST("Hamcrest", 2, TESTS, 6),
         MOCKITO("Mockito", 2, TESTS, 6),
+        JMETER("JMeter", 2, TESTS, 6),
 
     DATABASES ("Data Bases", 1, JAVA, 4),
         SQL("SQL", 2, DATABASES, 6),
@@ -85,6 +88,7 @@ JAVA ("Java", 0, null, 8),
         ORACLE("Oracle", 2, DATABASES, 8),
         JDBC("JDBC", 2, DATABASES, 7),
             MY_BATIS("MyBatis", 3, JDBC, 6),
+        MONGO("MongoDB", 2, DATABASES, 5),
 
     CONCEPTS("Concepts", 1, JAVA, 3),
         HARD_CONCEPTS("Hard Concepts", 2, CONCEPTS, 8),
@@ -98,8 +102,8 @@ JAVA ("Java", 0, null, 8),
             AGILE("Agile", 3, SOFT_CONCEPTS, 6),
                 SCRUM("SCRUM", 4, AGILE, 9),
             SOA("SOA", 3, SOFT_CONCEPTS, 7),
-            CONTINOUS_DELIVERY("Continuous Delivery", 3, SOFT_CONCEPTS, 7),
-            CONTINOUS_INTEGRATION("Continuous Integration", 3, SOFT_CONCEPTS, 8),
+            CONTINUOUS_DELIVERY("Continuous Delivery", 3, SOFT_CONCEPTS, 7),
+            CONTINUOUS_INTEGRATION("Continuous Integration", 3, SOFT_CONCEPTS, 8),
 
     OTHER_LANGUAGES("Languages (other than Java)", 1, JAVA, 2),
         JS("JavaScript", 2, OTHER_LANGUAGES, 8),
@@ -117,6 +121,7 @@ JAVA ("Java", 0, null, 8),
             HTML("HTML", 3, WEB, 7),
                 HTML5("HTML 5", 4, HTML, 8),
                 THYMELEAF("Thymeleaf", 4, HTML, 6),
+                JSP("JSP", 4, HTML, 5),
             CSS("CSS", 3, WEB, 6),
                 RWD("RWD", 4, CSS, 5),
             CMS("CMS", 3, WEB, 4),
@@ -141,23 +146,31 @@ JAVA ("Java", 0, null, 8),
         BIG_DATA("BigData", 2, OTHER, 6),
             MAP_REDUCE("MapReduce", 3, BIG_DATA, 6),
             SPARK("Spark", 3, BIG_DATA, 6),
-        MISC("Miscellaneous", 2, OTHER, 6),
+        APACHE("Apache", 2, OTHER, 6),
+    //paste other
+            APACHE_SERVICEMIX("Apache ServiceMix", 3, APACHE, 5),
+        MISC("Miscellaneous", 2, OTHER, 5),
             DWH("DWH", 3, MISC, 5),
             SOLR("SOLR", 3, MISC, 5),
             CLOUD("Cloud", 3, MISC, 6),
             GRAFANA("Grafana", 3, MISC, 6),
-            SAP_HYBRIS("SAP Hybris", 3, MISC, 4);
+            SAP_HYBRIS("SAP Hybris", 3, MISC, 4),
+            WEBSPHERE("WebSphere", 3, MISC, 4),
+            ACTIVEMQ("ActiveMQ", 3, MISC, 4),
+            GLASS_FISH("GlassFish", 3, MISC, 4);
 
 
     private String name;
     private int layer;
-    private int occurencies;
+    private double points;
     private double reqPoints;
+    private int occurrences;
     private Skill superSkill;
     private ArrayList<Skill> subSkills = new ArrayList<>();
     private int impactOnSuperSkill; //1-10
 
 
+    //add comment field
     Skill(String name, int layer, Skill superSkill, int impactOnSuperSkill){
         this.name = name;
         this.layer = layer;
@@ -167,23 +180,22 @@ JAVA ("Java", 0, null, 8),
 
 
     //add///////////////////////////////////////////////////////////////////////////////////
-
-    public void addReqPointsByRank(int rank, int offersCount) {
-        reqPoints += 1/(3 + (double)rank)/(double)offersCount * 50;
-        reqPoints = Math.round(reqPoints);
-
-    }
-
-    public void addOccurence() {
-        this.occurencies ++;
-    }
-
     public void addSubSkill(Skill subSkill) {
         subSkills.add(subSkill);
     }
 
+    public void addReqPoints(int offerPoints, int offersCount) {
+        reqPoints += (double) offerPoints /(double)offersCount;
+        reqPoints = Math.round(reqPoints);
+    }
+
+    public void addOccurence() {
+        this.occurrences++;
+    }
+
     public void addReqPointsBySuperSkill(){
-        reqPoints += superSkill.getReqPoints() * impactOnSuperSkill / 10;
+        reqPoints += superSkill.getReqPoints() * impactOnSuperSkill / 10 * (100 - reqPoints)/100;
+        reqPoints = Math.round(reqPoints);
     }
 
     public void addReqPointsBySubSkills() {
@@ -191,7 +203,7 @@ JAVA ("Java", 0, null, 8),
         for (Skill subskill: subSkills) {
             pointsFromSubskills += subskill.getReqPoints() * subskill.getImpactOnSuperSkill() / subSkills.size() / 10;
         }
-        reqPoints += pointsFromSubskills;
+        reqPoints += pointsFromSubskills * (100 - reqPoints)/100;
         reqPoints = Math.round(reqPoints);
     }
 
@@ -213,8 +225,8 @@ JAVA ("Java", 0, null, 8),
         this.layer = layer;
     }
 
-    public int getOccurencies() {
-        return occurencies;
+    public int getOccurrences() {
+        return occurrences;
     }
 
     public double getReqPoints() {

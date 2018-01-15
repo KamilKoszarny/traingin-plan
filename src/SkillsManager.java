@@ -4,77 +4,64 @@ import java.util.TreeSet;
 
 public class SkillsManager {
 
-
-
     private Set<Skill> skills = new TreeSet<>();
     private SkillsReqImporter skillsReqImporter;
 
 
-
-
     public SkillsManager(){
-        System.out.println("SkillsManager created");
         createSkillList();
-        setSubSkills();
         skillsReqImporter = new SkillsReqImporter(skills);
-        skills = skillsReqImporter.importSkillsReq();
-        addSubSkillReqPoints();
-        addSuperSkillReqPoints();
+        gainRequirements(ReqLvl.JUNIOR);
     }
 
         private void createSkillList(){
             skills.addAll(Arrays.asList(Skill.values()));
+            setSubSkills();
         }
 
-        private void setSubSkills(){
-            for (Skill skill: skills) {
-                for (Skill subSkill: skills) {
-                    if (subSkill.getSuperSkill() == skill) {
-                        skill.addSubSkill(subSkill);
+            private void setSubSkills(){
+                for (Skill skill: skills) {
+                    for (Skill subSkill: skills) {
+                        if (subSkill.getSuperSkill() == skill) {
+                            skill.addSubSkill(subSkill);
+                        }
                     }
                 }
             }
+
+        private void gainRequirements(ReqLvl reqLvl){
+            skills = skillsReqImporter.importSkillsReq(reqLvl);
+            addSubSkillReqPoints();
+            addSuperSkillReqPoints();
         }
 
-        private void addSubSkillReqPoints(){
-            System.out.println("addSuperSkillReqPoints");
-            for (int layer = 1; layer < 5; layer++) {
-                for (Skill skill : skills) {
-                    if (skill.getLayer() == layer)
-                        skill.addReqPointsBySuperSkill();
+            private void addSubSkillReqPoints(){
+//                System.out.println("addSubSkillReqPoints");
+                for (int layer = 1; layer < 5; layer++) {
+                    for (Skill skill : skills) {
+                        if (skill.getLayer() == layer)
+                            skill.addReqPointsBySuperSkill();
+                    }
                 }
             }
-        }
 
-        private void addSuperSkillReqPoints(){
-            System.out.println("addSuperSkillReqPoints");
-            for (int layer = 5; layer > -1; layer--) {
-                for (Skill skill : skills) {
-                    if (skill.getLayer() == layer)
-                        skill.addReqPointsBySubSkills();
+            private void addSuperSkillReqPoints(){
+                for (int layer = 5; layer > -1; layer--) {
+                    for (Skill skill : skills) {
+                        if (skill.getLayer() == layer)
+                            skill.addReqPointsBySubSkills();
+                    }
                 }
             }
-        }
 
-
-    public void standardizeSkills(){
-        for (Skill skill: skills) {
-
-        }
-    }
-
-    public void rateSkills(){
-
-    }
 
     public void showSkillsReq(){
-        String format = "%-30s%6s%15s%n";
-        System.out.printf(format, "Skill", "points", "occurencies");
+        String format = "%-30s%10s%10s%n";
+        System.out.printf(format, "Skill", "reqPoints", "occur.");
         for (Skill skill: skills) {
-            format = "%-30s%6.0f%15s%n";
+            format = "%-30s%10.0f%10s%n";
             String spaces = generateLayerSpaces(skill);
-            //System.out.println(skill.getName() + "\t\t" + skill.getReqPoints() + "points,\t" + skill.getOccurencies() + "occurencies");
-            System.out.printf(format, spaces + skill.getName(), skill.getReqPoints(), skill.getOccurencies());
+            System.out.printf(format, spaces + skill.getName(), skill.getReqPoints(), skill.getOccurrences());
         }
     }
 
@@ -85,6 +72,5 @@ public class SkillsManager {
             }
             return builder.toString();
         }
-
 
 }

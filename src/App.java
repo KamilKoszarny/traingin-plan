@@ -10,6 +10,7 @@ import java.lang.reflect.Field;
 public class App {
 
     App(){
+//        System.out.println(SkillCalculator.calculateSkillByExpHours(2000));
         SkillsManager skillsManager = new SkillsManager();
         skillsManager.showSkillsReq();
     }
