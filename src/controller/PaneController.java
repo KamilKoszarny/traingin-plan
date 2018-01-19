@@ -19,9 +19,12 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Line;
 import javafx.util.Callback;
 
+import java.util.Set;
+
 public class PaneController {
 
     private SkillsManager skillsManager;
+    private Set<Skill> skills;
 
     @FXML
     private TreeTableView<SkillItem> treeTableView;
@@ -68,6 +71,8 @@ public class PaneController {
                     minutesColumn.setVisible(false);
 
                     addActivity();
+                    skillsManager.save();
+                    skillsManager.showSkills();
                 }
             }
         });
@@ -105,8 +110,8 @@ public class PaneController {
         });
 
 
-
-        TreeItem<SkillItem> treeRoot = SkillItemsGenerator.generateRootAndItems();
+        SkillItemsGenerator sIG = new SkillItemsGenerator(skills);
+        TreeItem<SkillItem> treeRoot = sIG.generateRootAndItems();
         treeTableView.setRoot(treeRoot);
 
         skillColumn.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<SkillItem, String>, ObservableValue<String>>() {
@@ -237,5 +242,7 @@ public class PaneController {
 
     public void setSkillsManager(SkillsManager skillsManager) {
         this.skillsManager = skillsManager;
+        this.skills = skillsManager.getSkills();
     }
+
 }

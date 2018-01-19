@@ -1,8 +1,9 @@
 package main;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public enum Skill {
+public enum Skill implements Serializable {
 
 //o layer
 JAVA ("Java", 0, null, 8),
@@ -162,6 +163,7 @@ JAVA ("Java", 0, null, 8),
             GLASS_FISH("GlassFish", 3, MISC, 4);
 
 
+//    private static final long serialVersionUID = 1L;
     public static final int LEVELS = 4;
     public static final int LAYERS = 5;
     private String name;

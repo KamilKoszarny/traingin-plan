@@ -3,29 +3,66 @@ package controller;
 import main.Skill;
 import javafx.scene.control.TreeItem;
 
+import java.util.Iterator;
+import java.util.Set;
+
 public class SkillItemsGenerator {
 
-    public static TreeItem<SkillItem> generateRootAndItems(){
-        SkillItem skillItem;
-        TreeItem<SkillItem> treeItem, treeRoot, subTreeItem, subsubTreeItem, subsubsubTreeItem;
+    Set<Skill> skills;
 
-        skillItem = new SkillItem(Skill.JAVA);
-        treeRoot = new TreeItem<>(skillItem);
+    SkillItemsGenerator(Set<Skill> skills){
+        this.skills = skills;
+    }
 
-        for (Skill skill: Skill.values()) {
-            skillItem = new SkillItem(skill);
-            treeItem = new TreeItem<>(skillItem);
-            for (Skill subSkill: skill.getSubSkills()) {
-                skillItem = new SkillItem(subSkill);
+    public TreeItem<SkillItem> generateRootAndItems(){
+        Skill mainSkill;
+        SkillItem mainSkillItem, skillItem;
+        TreeItem<SkillItem> treeItem = null, treeRoot = null, subTreeItem = null, subsubTreeItem = null, subsubsubTreeItem = null;
+
+        Iterator<Skill> it = skills.iterator();
+        mainSkill = it.next();
+        mainSkillItem = new SkillItem(mainSkill);
+        treeRoot = new TreeItem<>(mainSkillItem);
+
+        for (Skill skill = mainSkill; it.hasNext();){
+            skill = it.next();
+            if (skill.getLayer() == 1) {
+                mainSkillItem = new SkillItem(skill);
+                treeItem = new TreeItem<>(mainSkillItem);
+                treeRoot.getChildren().add(treeItem);
+            } else if (skill.getLayer() == 2){
+                skillItem = new SkillItem(skill);
                 subTreeItem = new TreeItem<>(skillItem);
+                treeItem.getChildren().add(subTreeItem);
+            } else if (skill.getLayer() == 3){
+                skillItem = new SkillItem(skill);
+                subsubTreeItem = new TreeItem<>(skillItem);
+                subTreeItem.getChildren().add(subsubTreeItem);
+            } else if (skill.getLayer() == 4){
+                skillItem = new SkillItem(skill);
+                subsubsubTreeItem = new TreeItem<>(skillItem);
+                subsubTreeItem.getChildren().add(subsubsubTreeItem);
+            }
+
+        }
+
+
+
+/*
+        for (Skill skill: mainSkill.getSubSkills()) {
+            mainSkillItem = new SkillItem(skill);
+            treeItem = new TreeItem<>(mainSkillItem);
+            for (Skill subSkill: skill.getSubSkills()) {
+                mainSkillItem = new SkillItem(subSkill);
+                subTreeItem = new TreeItem<>(mainSkillItem);
 
                 for (Skill subsubSkill: subSkill.getSubSkills()) {
-                    skillItem = new SkillItem(subsubSkill);
-                    subsubTreeItem = new TreeItem<>(skillItem);
+                    mainSkillItem = new SkillItem(subsubSkill);
+                    subsubTreeItem = new TreeItem<>(mainSkillItem);
 
                     for (Skill subsubsubSkill: subsubSkill.getSubSkills()) {
-                        skillItem = new SkillItem(subsubsubSkill);
-                        subsubsubTreeItem = new TreeItem<>(skillItem);
+                        mainSkillItem = new SkillItem(subsubsubSkill);
+                        subsubsubTreeItem = new TreeItem<>(mainSkillItem);
                         subsubTreeItem.getChildren().add(subsubsubTreeItem);
                     }
                     subTreeItem.getChildren().add(subsubTreeItem);
@@ -35,6 +72,7 @@ public class SkillItemsGenerator {
             if (skill.getLayer() == 1)
                 treeRoot.getChildren().add(treeItem);
         }
+        */
         return treeRoot;
     }
 }

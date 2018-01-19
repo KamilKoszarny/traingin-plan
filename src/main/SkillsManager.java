@@ -6,20 +6,24 @@ import java.util.TreeSet;
 
 public class SkillsManager {
 
-    private Set<Skill> skills = new TreeSet<>();
-
+    private Set<Skill> skills = new Skills();
+    SkillsLoadSaver skillsLoadSaver = new SkillsLoadSaver();
 
     public SkillsManager(){
-        createSkillList();
+
+
+//        createSkillList();
+        skills = skillsLoadSaver.loadFromFile();
+        setSubSkills();
+
         SkillsReqImporter skillsReqImporter = new SkillsReqImporter(skills);
+
         ReqLvl[] reqLvls = ReqLvl.values();
         for (ReqLvl reqLvl: reqLvls) {
             skills = skillsReqImporter.importSkillsReq(reqLvl);
         }
-//        Skill.SPRING.addPoints(60);
-//        Skill.OOP_IN_JAVA.addPoints(50);
-//        Skill.CLASSES.addPoints(50);
-//        Skill.GUI.addPoints(50);
+
+//        increaseSkill(Skill.BASICS, 20);
     }
 
     private void createSkillList(){
@@ -61,4 +65,11 @@ public class SkillsManager {
         return builder.toString();
     }
 
+    public Set<Skill> getSkills() {
+        return skills;
+    }
+
+    public void save(){
+        skillsLoadSaver.saveToFile(skills);
+    }
 }

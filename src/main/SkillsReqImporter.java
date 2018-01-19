@@ -120,7 +120,7 @@ public class SkillsReqImporter {
         if (skillExists(text)){
             saveSkillReq(text, points);
         } else{
-            System.out.println("main.Skill don't exists: " + text);
+            System.out.println("Skill don't exists: " + text);
             System.out.println("Cell: col: " + cell.getColumnIndex() + " row: " + cell.getRowIndex());
         }
         return skills;

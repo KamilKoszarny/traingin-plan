@@ -15,10 +15,14 @@ public class App extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception {
         SkillsManager skillsManager = new SkillsManager();
-//        skillsManager.showSkills();
+        skillsManager.showSkills();
 
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(this.getClass().getResource("/fxml/MainWindow.fxml"));
+
+        PaneController paneController = new PaneController();
+        fxmlLoader.setController(paneController);
+        paneController.setSkillsManager(skillsManager);
 
         StackPane stackPane = fxmlLoader.load();
         Scene scene = new Scene(stackPane);
@@ -26,8 +30,7 @@ public class App extends Application{
         primaryStage.setTitle("Training Plan");
         primaryStage.show();
 
-        PaneController paneController = fxmlLoader.getController();
-        paneController.setSkillsManager(skillsManager);
+//        paneController.setSkills(skillsManager.getSkills());
     }
 
     public static void main(String[] args) {
