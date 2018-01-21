@@ -1,8 +1,13 @@
 package controller;
 
-import main.ReqLvl;
-import main.Skill;
-import main.SkillCalculator;
+import javafx.collections.FXCollections;
+import javafx.concurrent.Task;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.text.Text;
+import skills.Project;
+import skills.ReqLvl;
+import skills.Skill;
+import skills.SkillCalculator;
 import main.SkillsManager;
 import javafx.beans.property.ReadOnlyDoubleProperty;
 import javafx.beans.property.ReadOnlyObjectWrapper;
@@ -19,7 +24,8 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Line;
 import javafx.util.Callback;
 
-import java.util.Set;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class PaneController {
 
@@ -37,79 +43,105 @@ public class PaneController {
     @FXML
     private TreeTableColumn<SkillItem, StackPane> progressColumn;
     @FXML
-    private TreeTableColumn<SkillItem, HBox> effortColumn;
-    @FXML
     private TreeTableColumn<SkillItem, HBox> minutesColumn;
     @FXML
-    private RadioButton juniorRadioButton, midRadioButton, seniorRadioButton, architectRadioButton;
+    private TreeTableColumn<SkillItem, HBox> effortColumn;
+    @FXML
+    private TreeTableColumn<SkillItem, HBox> commentColumn;
+
+    @FXML
+    private Label dateLabel;
     @FXML
     private Button activityButton;
     @FXML
-    private Label hoursLabel;
+    private Text requirementsLabel;
+    @FXML
+    private RadioButton juniorRadioButton, midRadioButton, seniorRadioButton, architectRadioButton;
+
+    @FXML
+    private Text projectText;
+    @FXML
+    private ComboBox projectComboBox;
+    @FXML
+    private Text newProjectText;
+    @FXML
+    private TextField newProjectTextField;
+    @FXML
+    private Button addProjectButton;
+    @FXML
+    private Label activityTimeLabel;
+    @FXML
+    private Button activityCancelButton;
+
+
 
     public PaneController(){
     }
 
     @FXML
     void initialize(){
+        setLook(true);
+
         activityButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 if(activityButton.getText().equals("Add activity")) {
-                    activityButton.setText("Confirm");
-                    pointsColumn.setVisible(false);
-                    reqPointsColumn.setVisible(false);
-                    progressColumn.setVisible(false);
-                    effortColumn.setVisible(true);
-                    minutesColumn.setVisible(true);
+                    setLook(false);
                 } else {
-                    activityButton.setText("Add activity");
-                    pointsColumn.setVisible(true);
-                    reqPointsColumn.setVisible(true);
-                    progressColumn.setVisible(true);
-                    effortColumn.setVisible(false);
-                    minutesColumn.setVisible(false);
-
-                    addActivity();
-                    skillsManager.save();
-                    skillsManager.showSkills();
+                    setLook(true);
+                    confirmActivity();
                 }
             }
         });
-
-
-
-        final ToggleGroup levelToggleGroup = new ToggleGroup();
-        juniorRadioButton.setToggleGroup(levelToggleGroup);
-        midRadioButton.setToggleGroup(levelToggleGroup);
-        seniorRadioButton.setToggleGroup(levelToggleGroup);
-        architectRadioButton.setToggleGroup(levelToggleGroup);
-
-        juniorRadioButton.setUserData(ReqLvl.JUNIOR);
-        midRadioButton.setUserData(ReqLvl.MID);
-        seniorRadioButton.setUserData(ReqLvl.SENIOR);
-        architectRadioButton.setUserData(ReqLvl.ARCHITECT);
-
-        juniorRadioButton.setSelected(true);
-        String color = ReqLvl.JUNIOR.getColor().toString();
-        String fxColor = color.substring(2, color.length());
-        reqPointsColumn.setStyle("-fx-text-fill: #" + fxColor);
-
-        levelToggleGroup.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+        activityCancelButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
-                if (levelToggleGroup.getSelectedToggle() != null){
-                    ReqLvl choosenReqLvl = (ReqLvl)levelToggleGroup.getSelectedToggle().getUserData();
-                    SkillItem.reqLvl = choosenReqLvl;
-                    String color = choosenReqLvl.getColor().toString();
-                    String fxColor = color.substring(2, color.length());
-                    reqPointsColumn.setStyle("-fx-text-fill: #" + fxColor);
-                    treeTableView.refresh();
-                }
+            public void handle(ActionEvent event) {
+                setLook(true);
             }
         });
 
+        newProjectTextField.setOnKeyTyped(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                addProjectButton.setVisible(!newProjectTextField.getText().isEmpty());
+            }
+        });
+        addProjectButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Project project = null;
+                boolean projectExisits = false;
+                for (Project existingProject : Project.projects) {
+                    if (newProjectTextField.getText().equalsIgnoreCase(existingProject.getName())){
+                        project = existingProject;
+                        projectExisits = true;
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setHeaderText("Project exists");
+                        alert.setContentText("Project with this name already exists. I am not adding but selecting this");
+                        alert.showAndWait();
+                    }
+                }
+                if(!projectExisits){
+                    project = new Project(newProjectTextField.getText());
+                    Project.projects.add(project);
+                    setItemsInProjectComboBox();
+                }
 
+                newProjectTextField.setText("");
+                projectComboBox.getSelectionModel().select(project.getName());
+            }
+        });
+
+        initializeTreeTable();
+
+        initializeClock();
+
+        initializeRequirementsToggleGroup();
+
+        initializeProjectsComboBox();
+    }
+
+    private void initializeTreeTable(){
         SkillItemsGenerator sIG = new SkillItemsGenerator(skills);
         TreeItem<SkillItem> treeRoot = sIG.generateRootAndItems();
         treeTableView.setRoot(treeRoot);
@@ -161,13 +193,27 @@ public class PaneController {
         minutesColumn.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<SkillItem, HBox>, ObservableValue<HBox>>() {
             @Override
             public ObservableValue<HBox> call(TreeTableColumn.CellDataFeatures<SkillItem, HBox> param) {
-                return param.getValue().getValue().getMinutesHBoxWrapper();
+                if (param.getValue().getValue().getSkill() == Skill.JAVA)
+                    return null;
+                else {
+                    NumberTextField minutesTextField = (NumberTextField)param.getValue().getValue().getMinutesHBoxWrapper().get().getUserData();
+                    minutesTextField.setOnKeyReleased(new EventHandler<KeyEvent>() {
+                        @Override
+                        public void handle(KeyEvent event) {
+                            addTimeToLabel();
+                        }
+                    });
+                    return param.getValue().getValue().getMinutesHBoxWrapper();
+                }
             }
         });
         effortColumn.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<SkillItem, HBox>, ObservableValue<HBox>>() {
             @Override
             public ObservableValue<HBox> call(TreeTableColumn.CellDataFeatures<SkillItem, HBox> param) {
-                return param.getValue().getValue().getEffortHBoxWrapper();
+                if (param.getValue().getValue().getSkill() == Skill.JAVA)
+                    return null;
+                else
+                    return param.getValue().getValue().getEffortHBoxWrapper();
             }
         });
 
@@ -178,40 +224,157 @@ public class PaneController {
         effortColumn.setResizable(false);
 
         progressColumn.setSortable(false);
-
-        effortColumn.setVisible(false);
-        minutesColumn.setVisible(false);
+        //align comment column left?
     }
+
+    private void initializeClock(){
+        Task dynamicTimeTask = new Task<Void>() {
+            @Override
+            protected Void call(){
+                SimpleDateFormat sdf = new SimpleDateFormat("EEE, d MMM yyyy \nHH:mm:ss");
+                while (true) {
+                    updateMessage(sdf.format(new Date()));
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException ex) {
+                        break;
+                    }
+                }
+                return null;
+            }
+        };
+        dateLabel.textProperty().bind(dynamicTimeTask.messageProperty());
+        Thread t2 = new Thread(dynamicTimeTask);
+        t2.setName("Task Time Updater");
+        t2.setDaemon(true);
+        t2.start();
+    }
+
+    private void initializeRequirementsToggleGroup(){
+        final ToggleGroup levelToggleGroup = new ToggleGroup();
+        juniorRadioButton.setToggleGroup(levelToggleGroup);
+        midRadioButton.setToggleGroup(levelToggleGroup);
+        seniorRadioButton.setToggleGroup(levelToggleGroup);
+        architectRadioButton.setToggleGroup(levelToggleGroup);
+
+        juniorRadioButton.setUserData(ReqLvl.JUNIOR);
+        midRadioButton.setUserData(ReqLvl.MID);
+        seniorRadioButton.setUserData(ReqLvl.SENIOR);
+        architectRadioButton.setUserData(ReqLvl.ARCHITECT);
+
+        juniorRadioButton.setSelected(true);
+        String color = ReqLvl.JUNIOR.getColor().toString();
+        String fxColor = color.substring(2, color.length());
+        reqPointsColumn.setStyle("-fx-text-fill: #" + fxColor);
+
+        levelToggleGroup.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+            @Override
+            public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
+                if (levelToggleGroup.getSelectedToggle() != null){
+                    ReqLvl choosenReqLvl = (ReqLvl)levelToggleGroup.getSelectedToggle().getUserData();
+                    SkillItem.reqLvl = choosenReqLvl;
+                    String color = choosenReqLvl.getColor().toString();
+                    String fxColor = color.substring(2, color.length());
+                    reqPointsColumn.setStyle("-fx-text-fill: #" + fxColor);
+                    treeTableView.refresh();
+                }
+            }
+        });
+    }
+
+    private void initializeProjectsComboBox(){
+        setItemsInProjectComboBox();
+        projectComboBox.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                activityButton.setVisible(true);
+            }
+        });
+    }
+    private void setItemsInProjectComboBox(){
+        projectComboBox.setItems(FXCollections.observableArrayList(
+                Project.projects.getNamesList()
+        ));
+    }
+
+    private void confirmActivity(){
+        addActivity();
+        skillsManager.save();
+        skillsManager.showSkills();
+    }
+
+    private void setLook(boolean main){
+        pointsColumn.setVisible(main);
+        progressColumn.setVisible(main);
+        reqPointsColumn.setVisible(main);
+
+        requirementsLabel.setVisible(main);
+        juniorRadioButton.setVisible(main);
+        midRadioButton.setVisible(main);
+        seniorRadioButton.setVisible(main);
+        architectRadioButton.setVisible(main);
+
+        if (main) {
+            activityButton.setText("Add activity");
+            activityButton.setTranslateY(0);
+        } else {
+            activityButton.setVisible(false);
+            activityButton.setText("Confirm");
+            activityButton.setTranslateY(165);
+        }
+
+
+
+        if (!main)
+            treeTableView.getRoot().setExpanded(true);
+        effortColumn.setVisible(!main);
+        minutesColumn.setVisible(!main);
+        commentColumn.setVisible(!main);
+
+        projectText.setVisible(!main);
+        activityTimeLabel.setVisible(!main);
+        newProjectText.setVisible(!main);
+        newProjectTextField.setVisible(!main);
+        addProjectButton.setVisible(false);
+        projectComboBox.setVisible(!main);
+        if (!main)
+            initializeProjectsComboBox();
+        activityCancelButton.setVisible(!main);
+    }
+
 
     private void addActivity(){
         TextField minutesTextField;
-        for (TreeItem<SkillItem> treeItem: treeTableView.getRoot().getChildren()) {
+        TreeItem<SkillItem> treeItem = treeTableView.getRoot();
+        while (nextTreeItem(treeItem) != null) {
+            treeItem = nextTreeItem(treeItem);
             increaseSkill(treeItem);
-            minutesTextField = (TextField)treeItem.getValue().getMinutesHBoxWrapper().get().getUserData();
+            minutesTextField = (TextField) treeItem.getValue().getMinutesHBoxWrapper().get().getUserData();
             minutesTextField.setText("");
-            for (TreeItem<SkillItem> subTreeItem : treeItem.getChildren()) {
-                increaseSkill(subTreeItem);
-                minutesTextField = (TextField)treeItem.getValue().getMinutesHBoxWrapper().get().getUserData();
-                minutesTextField.setText("");
-                for (TreeItem<SkillItem> subsubTreeItem : subTreeItem.getChildren()) {
-                    increaseSkill(subsubTreeItem);
-                    minutesTextField = (TextField)treeItem.getValue().getMinutesHBoxWrapper().get().getUserData();
-                    minutesTextField.setText("");
-                    for (TreeItem<SkillItem> subsubsubTreeItem : subsubTreeItem.getChildren()) {
-                        increaseSkill(subsubsubTreeItem);
-                        minutesTextField = (TextField)treeItem.getValue().getMinutesHBoxWrapper().get().getUserData();
-                        minutesTextField.setText("");
-                        for (TreeItem<SkillItem> subsubsubsubTreeItem : subsubsubTreeItem.getChildren()) {
-                            increaseSkill(subsubsubsubTreeItem);
-                            minutesTextField = (TextField)treeItem.getValue().getMinutesHBoxWrapper().get().getUserData();
-                            minutesTextField.setText("");
-                        }
-                    }
-                }
-            }
+//            System.out.println(treeItem.getValue().getSkill().getName());
         }
     }
 
+    private TreeItem<SkillItem> nextTreeItem(TreeItem<SkillItem> treeItem){
+        return nextTreeItem(treeItem, true);
+    }
+
+    private TreeItem<SkillItem> nextTreeItem(TreeItem<SkillItem> treeItem, boolean childSearch){
+        if (treeItem.getChildren().size() != 0 && childSearch)
+            return treeItem.getChildren().get(0);
+        else {
+            TreeItem<SkillItem> parentItem = treeItem.getParent();
+            if (treeItem == treeTableView.getRoot())
+                return null;
+            for (int i = 0; i < parentItem.getChildren().size() - 1; i++) {
+                if (treeItem == parentItem.getChildren().get(i))
+                    return parentItem.getChildren().get(i + 1);
+            }
+            if (treeItem == parentItem.getChildren().get(parentItem.getChildren().size() - 1))
+                return nextTreeItem(parentItem, false);
+        }
+        return null;
+    }
 
     private void increaseSkill(TreeItem<SkillItem> treeItem){
         Skill skill = treeItem.getValue().getSkill();
@@ -219,25 +382,42 @@ public class PaneController {
         TextField effortTextField = (TextField)treeItem.getValue().getEffortHBoxWrapper().get().getUserData();
 
         if (!minutesTextField.getText().isEmpty()) {
-            double minutes = Double.parseDouble(minutesTextField.getText());
-            double effort = 100;
-            if(!effortTextField.getText().isEmpty())
-                effort = Double.parseDouble(effortTextField.getText());
-
-            double effectiveMinutes = minutes * effort / 100.;
+            double effectiveMinutes = readEffectiveMinutes(minutesTextField, effortTextField);
             double points = SkillCalculator.pointsByMinutes(effectiveMinutes);
-            skillsManager.increaseSkill(skill, points);
+            Project project = Project.getProjectByName((String)projectComboBox.getValue());
+            skillsManager.increaseSkill(skill, points, project);
 
             System.out.println(skill.getName());
-            System.out.println(points);
+            System.out.println(points + "points added");
         }
     }
 
+    private double readEffectiveMinutes(TextField minutesTextField, TextField effortTextField){
+        double minutes = Double.parseDouble(minutesTextField.getText());
+        double effort = 100;
+        if(!effortTextField.getText().isEmpty())
+            effort = Double.parseDouble(effortTextField.getText());
+
+        return minutes * effort / 100.;
+    }
+
+
     private void addTimeToLabel(){
-        double hours = 0;
+        int hours = 0, minutes = 0;
+        double skillMinutes;
+        TextField minutesTextField;
+        TreeItem<SkillItem> treeItem = treeTableView.getRoot();
+        while (nextTreeItem(treeItem) != null) {
+            treeItem = nextTreeItem(treeItem);
+            minutesTextField = (TextField)treeItem.getValue().getMinutesHBoxWrapper().get().getUserData();
+            if (!minutesTextField.getText().isEmpty()) {
+                skillMinutes = Integer.parseInt(minutesTextField.getText());
+                hours += (int)(skillMinutes/60.);
+                minutes += Math.round(skillMinutes%60);
+            }
+        }
 
-
-        hoursLabel.setText("Time: " + Math.round(hours*100.)/100. + " hours");
+        activityTimeLabel.setText("Time on activity:\n" + hours + " h " + minutes + " min");
     }
 
     public void setSkillsManager(SkillsManager skillsManager) {

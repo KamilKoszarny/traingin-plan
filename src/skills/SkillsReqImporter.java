@@ -1,11 +1,10 @@
-package main;
+package skills;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Set;
 
 public class SkillsReqImporter {
 
@@ -23,12 +22,12 @@ public class SkillsReqImporter {
 
     private Workbook workbook;
     private Sheet skillSheet;
-    Row headerRow;
-    Set<Skill> skills;
-    ReqLvl reqLvl;
+    private Row headerRow;
+    private SkillsSet skills;
+    private ReqLvl reqLvl;
 
 
-    public SkillsReqImporter(Set<Skill> skills){
+    public SkillsReqImporter(SkillsSet skills){
         openFile(skillsFilePath);
         openSheet(skillSheetName);
         this.skills = skills;
@@ -68,8 +67,15 @@ public class SkillsReqImporter {
         }
     }
 
+    public SkillsSet importSkillsReq(ReqLvl[] reqLvls){
+        for (ReqLvl reqLvl: reqLvls) {
+            skills = importSkillsReq(reqLvl);
+        }
+        return skills;
+    }
 
-    public Set<Skill> importSkillsReq(ReqLvl reqLvl){
+
+    public SkillsSet importSkillsReq(ReqLvl reqLvl){
         this.reqLvl = reqLvl;
         levelOffersCount = 0;
         int rowStart = HEADER_ROW_INDEX + 1;
@@ -91,10 +97,11 @@ public class SkillsReqImporter {
                 }
             }
         }
-        System.out.println("Level: " + reqLvl.toString());
-        System.out.println("Offers considered: " + levelOffersCount);
-        addSubSkillReqPoints(reqLvl);
+        System.out.print("Level: " + reqLvl.toString());
+        System.out.println("\tOffers: " + levelOffersCount);
+
         addSuperSkillReqPoints(reqLvl);
+        addSubSkillReqPoints(reqLvl);
         return skills;
     }
 
@@ -112,7 +119,7 @@ public class SkillsReqImporter {
             skills = tryToSaveSkillReqFromCell(cell, skills);
     }
 
-    private  Set<Skill> tryToSaveSkillReqFromCell(Cell cell, Set<Skill> skills){
+    private SkillsSet tryToSaveSkillReqFromCell(Cell cell, SkillsSet skills){
         String text = cell.getStringCellValue();
         Cell pointsCell = cell.getRow().getCell(cell.getColumnIndex() + 1);
         int points = (int)(pointsCell.getNumericCellValue());
@@ -140,7 +147,7 @@ public class SkillsReqImporter {
             if (text.equalsIgnoreCase(skill.getName())) {
                 //skill.addReqPoints(points, levelOffersCount);
                 skill.addReqPoints(points, levelOffersCount, reqLvl);
-                skill.addOccurence();
+                skill.addOccurrence();
                 return true;
             }
         }

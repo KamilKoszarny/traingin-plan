@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -23,18 +23,26 @@
                               <TreeTableColumn fx:id="pointsColumn" prefWidth="55.0" text="Points" />
                               <TreeTableColumn fx:id="progressColumn" prefWidth="182.0" text="Progress" />
                               <TreeTableColumn fx:id="reqPointsColumn" minWidth="0.0" prefWidth="74.0" text="ReqPoints" />
-                              <TreeTableColumn fx:id="minutesColumn" minWidth="15.0" text="Minutes" />
+                              <TreeTableColumn fx:id="minutesColumn" minWidth="18.0" text="Minutes" />
                               <TreeTableColumn fx:id="effortColumn" text="Effort" />
+                              <TreeTableColumn fx:id="commentColumn" prefWidth="500.0" text="Comment" />
                           </columns>
                         </TreeTableView>
                         <Group layoutX="57.0" layoutY="14.0" />
-                        <Text layoutX="508.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Show requirements:" />
-                        <RadioButton fx:id="juniorRadioButton" layoutX="508.0" layoutY="118.0" mnemonicParsing="false" text="Junior" textFill="GREEN" />
-                        <RadioButton fx:id="midRadioButton" layoutX="508.0" layoutY="135.0" mnemonicParsing="false" text="Mid" textFill="BLUE" />
-                        <RadioButton fx:id="seniorRadioButton" layoutX="508.0" layoutY="152.0" mnemonicParsing="false" text="Senior" textFill="RED" />
-                        <RadioButton fx:id="architectRadioButton" layoutX="508.0" layoutY="169.0" mnemonicParsing="false" text="Architect" />
-                        <Button fx:id="activityButton" layoutX="508.0" layoutY="64.0" mnemonicParsing="false" text="Add activity" />
-                        <Label fx:id="hoursLabel" layoutX="508.0" layoutY="32.0" text="Time: ... hours" />
+                        <Text fx:id="requirementsLabel" layoutX="504.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Show requirements:" />
+                        <RadioButton fx:id="juniorRadioButton" layoutX="509.0" layoutY="125.0" mnemonicParsing="false" text="Junior" textFill="GREEN" />
+                        <RadioButton fx:id="midRadioButton" layoutX="509.0" layoutY="142.0" mnemonicParsing="false" text="Mid" textFill="BLUE" />
+                        <RadioButton fx:id="seniorRadioButton" layoutX="509.0" layoutY="159.0" mnemonicParsing="false" text="Senior" textFill="RED" />
+                        <RadioButton fx:id="architectRadioButton" layoutX="509.0" layoutY="176.0" mnemonicParsing="false" text="Architect" />
+                        <Button fx:id="activityButton" layoutX="504.0" layoutY="69.0" mnemonicParsing="false" text="Add activity" />
+                        <Label fx:id="activityTimeLabel" layoutX="506.0" layoutY="193.0" text="Time on activity: " />
+                        <Button fx:id="activityCancelButton" layoutX="504.0" layoutY="265.0" mnemonicParsing="false" text="Cancel" />
+                        <Label fx:id="dateLabel" layoutX="506.0" layoutY="32.0" text="Date: " />
+                        <ComboBox fx:id="projectComboBox" layoutX="504.0" layoutY="87.0" prefWidth="120.0" promptText="Project" />
+                        <TextField fx:id="newProjectTextField" layoutX="504.0" layoutY="134.0" promptText="new project" />
+                        <Button fx:id="addProjectButton" layoutX="504.0" layoutY="164.0" mnemonicParsing="false" text="Add project" />
+                        <Text fx:id="newProjectText" layoutX="503.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New project:" />
+                        <Text fx:id="projectText" layoutX="504.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project:" />
                      </children>
                   </AnchorPane>
             </content>

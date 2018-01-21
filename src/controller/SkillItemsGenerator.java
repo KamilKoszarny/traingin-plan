@@ -1,6 +1,6 @@
 package controller;
 
-import main.Skill;
+import skills.Skill;
 import javafx.scene.control.TreeItem;
 
 import java.util.Iterator;

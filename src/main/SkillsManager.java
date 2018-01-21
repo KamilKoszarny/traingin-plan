@@ -1,59 +1,93 @@
 package main;
 
-import java.util.Arrays;
+import skills.*;
+
+import java.text.SimpleDateFormat;
 import java.util.Set;
-import java.util.TreeSet;
 
 public class SkillsManager {
 
-    private Set<Skill> skills = new Skills();
-    SkillsLoadSaver skillsLoadSaver = new SkillsLoadSaver();
+    private SkillsSet skills = new SkillsSet();
+    private SkillsLoadSaver skillsLoadSaver = new SkillsLoadSaver();
 
-    public SkillsManager(){
+    SkillsManager(){
+        System.out.println(Project.projects.toString());
 
-
-//        createSkillList();
-        skills = skillsLoadSaver.loadFromFile();
-        setSubSkills();
+        if (skillsLoadSaver.fileExists()) {
+            skills = skillsLoadSaver.loadFromFile(skills);
+//            showSkillsHistories();
+        }
 
         SkillsReqImporter skillsReqImporter = new SkillsReqImporter(skills);
+        skills = skillsReqImporter.importSkillsReq(ReqLvl.values());
 
-        ReqLvl[] reqLvls = ReqLvl.values();
-        for (ReqLvl reqLvl: reqLvls) {
-            skills = skillsReqImporter.importSkillsReq(reqLvl);
-        }
-
-//        increaseSkill(Skill.BASICS, 20);
+        decreaseSkillsByTime();
     }
 
-    private void createSkillList(){
-            skills.addAll(Arrays.asList(Skill.values()));
-            setSubSkills();
+
+    public void increaseSkill(Skill skill, double points, Project project){
+        skill.addPoints(points, project);
+    }
+
+    public void decreaseSkillsByTime(){
+        for (Skill skill: skills) {
+            skill.outdatePoints();
         }
-
-    private void setSubSkills(){
-                for (Skill skill: skills) {
-                    for (Skill subSkill: skills) {
-                        if (subSkill.getSuperSkill() == skill) {
-                            skill.addSubSkill(subSkill);
-                        }
-                    }
-                }
-
-            }
-
-    public void increaseSkill(Skill skill, double points){
-        skill.addPoints(points);
     }
 
 
     public void showSkills(){
         String format = "%-30s%10s%10s%10s%n";
         System.out.printf(format, "Skill", "reqPoints", "occur.", "points");
+        format = "%-30s%10.0f%10s%10.0f%n";
+        String spaces;
         for (Skill skill: skills) {
-            format = "%-30s%10.0f%10s%10.0f%n";
-            String spaces = generateLayerSpaces(skill);
-            System.out.printf(format, spaces + skill.getName(), skill.getReqPointsForLevel(ReqLvl.ARCHITECT), skill.getOccurrences(), skill.getPoints());
+            spaces = generateLayerSpaces(skill);
+            System.out.printf(format, spaces + skill.getName(),
+                    skill.getReqPointsForLevel(ReqLvl.ARCHITECT), skill.getOccurrences(), skill.getPoints());
+        }
+    }
+
+    public void showSkillsHistories(){
+        System.out.println("\nSkills histories:");
+        String format = "%-30s%17s%17s%17s";
+        System.out.printf(format, "Skill", "date1", "date2", "...");
+        String spaces;
+        SimpleDateFormat dateFormat = new SimpleDateFormat(" dd MMM, HH:mm:ss");
+        for (Skill skill: skills) {
+            if (skill.getSkillHistory().size() > 0) {
+                spaces = generateLayerSpaces(skill);
+                format = "%n%-30s";
+                System.out.printf(format, spaces + skill.getName());
+                for (int i = 0; i < skill.getSkillHistory().size(); i++) {
+                    System.out.print(dateFormat.format(skill.getSkillHistory().get(i).date));
+                }
+                format = "%n%-30s";
+                System.out.printf(format, "");
+                for (int i = 0; i < skill.getSkillHistory().size(); i++) {
+                    format = "%12s%5.2f";
+                    System.out.printf(format, "points:", skill.getSkillHistory().get(i).points);
+                }
+                format = "%n%-30s";
+                System.out.printf(format, "");
+                for (int i = 0; i < skill.getSkillHistory().size(); i++) {
+                    format = "%17s";
+                    System.out.printf(format, skill.getSkillHistory().get(i).project.getName());
+                }
+                format = "%n%-30s";
+                System.out.printf(format, "");
+                for (int i = 0; i < skill.getSkillHistory().size(); i++) {
+                    format = "%12s%5.1f";
+                    System.out.printf(format, "JuniorReq:", skill.getSkillHistory().get(i).reqPoints[ReqLvl.JUNIOR.ordinal()]);
+                }
+                format = "%n%-30s";
+                System.out.printf(format, "");
+                for (int i = 0; i < skill.getSkillHistory().size(); i++) {
+                    format = "%12s%5d";
+                    System.out.printf(format, "occur:", skill.getSkillHistory().get(i).occurrences);
+                }
+                System.out.println("");
+            }
         }
     }
 
@@ -65,9 +99,11 @@ public class SkillsManager {
         return builder.toString();
     }
 
+
     public Set<Skill> getSkills() {
         return skills;
     }
+
 
     public void save(){
         skillsLoadSaver.saveToFile(skills);

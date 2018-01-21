@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import skills.SkillCalculator;
 import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
@@ -15,7 +16,6 @@ public class App extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception {
         SkillsManager skillsManager = new SkillsManager();
-        skillsManager.showSkills();
 
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(this.getClass().getResource("/fxml/MainWindow.fxml"));
@@ -34,7 +34,8 @@ public class App extends Application{
     }
 
     public static void main(String[] args) {
-//        System.out.println(SkillCalculator.pointsByMinutes(480));
+//        System.out.println(SkillCalculator.pointsByMinutes(60*8));
+//        System.out.println(SkillCalculator.pointsPercentLeftByDays(300));
         disableWarning();
         launch(args);
     }

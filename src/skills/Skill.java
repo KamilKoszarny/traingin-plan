@@ -1,9 +1,11 @@
-package main;
+package skills;
 
-import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
-public enum Skill implements Serializable {
+public enum Skill {
 
 //o layer
 JAVA ("Java", 0, null, 8),
@@ -12,22 +14,21 @@ JAVA ("Java", 0, null, 8),
         //2nd layer
         BASICS("Basics", 2, LANGUAGE, 8),
             //3rd layer
-            LANG_BASICS("Language basics", 3, BASICS, 5),
-            OOP_IN_JAVA("OOP in Java", 3, BASICS, 4),
-            CLASSES("Classes", 3, BASICS, 6),
-            GUI("GUI", 3, BASICS, 2),
-        ADVANCED("Advanced", 2, LANGUAGE, 4),
-            PATTERNS("Design patterns", 3, ADVANCED, 9),
-            GENERICS("Generics", 3, ADVANCED, 8),
-            JAVA8("Java 8", 3, ADVANCED, 6),
+            LANG_BASICS("Language basics", 3, BASICS, 11),
+            OOP_IN_JAVA("OOP in Java", 3, BASICS, 12),
+            CLASSES("Classes", 3, BASICS, 7),
+            GUI("GUI", 3, BASICS, 5),
+        ADVANCED("Advanced", 2, LANGUAGE, 9),
+            PATTERNS("Design patterns", 3, ADVANCED, 10),
+            GENERICS("Generics", 3, ADVANCED, 7),
+            JAVA8("Java 8", 3, ADVANCED, 7),
             COLLECTIONS("Collections", 3, ADVANCED, 7),
             ALGORITHMS("Algorithms", 3, ADVANCED, 8),
-            SERVLETS("Servlets", 3, ADVANCED, 5),
-        COMMERCIAL("Commercial", 2, LANGUAGE, 6),
+            SERVLETS("Servlets", 3, ADVANCED, 6),
+        COMMERCIAL("Commercial", 2, LANGUAGE, 8),
             JEE("JEE", 3, COMMERCIAL, 7),
                 EJB("EJB", 4, JEE, 5),
-            J2EE("J2EE", 3, COMMERCIAL, 9),
-            SERVLET("Servlet", 3, COMMERCIAL, 5),
+            J2EE("J2EE", 3, COMMERCIAL, 11),
             ANT("Ant", 3, COMMERCIAL, 5),
             JMS("JMS", 3, COMMERCIAL, 6),
             REST("REST", 3, COMMERCIAL, 6),
@@ -77,14 +78,14 @@ JAVA ("Java", 0, null, 8),
             LOGSTASH("Logstash", 3, OTHER_TOOLS, 5),
             TOMCAT("TomCat", 3, OTHER_TOOLS, 5),
 
-    TESTS ("Tests", 1, JAVA, 4),
+    TESTS ("Tests", 1, JAVA, 6),
         JUNIT("JUnit", 2, TESTS, 8),
             TEST_NG("TestNG", 3, JUNIT, 7),
         HAMCREST("Hamcrest", 2, TESTS, 6),
         MOCKITO("Mockito", 2, TESTS, 6),
         JMETER("JMeter", 2, TESTS, 6),
 
-    DATABASES ("Data Bases", 1, JAVA, 4),
+    DATABASES ("Data Bases", 1, JAVA, 5),
         SQL("SQL", 2, DATABASES, 6),
             MY_SQL("MySQL", 3, SQL, 6),
             POSTGRE_SQL("PostgreSQL", 3, SQL, 8),
@@ -93,7 +94,7 @@ JAVA ("Java", 0, null, 8),
             MY_BATIS("MyBatis", 3, JDBC, 6),
         MONGO("MongoDB", 2, DATABASES, 5),
 
-    CONCEPTS("Concepts", 1, JAVA, 3),
+    CONCEPTS("Concepts", 1, JAVA, 5),
         HARD_CONCEPTS("Hard Concepts", 2, CONCEPTS, 8),
             OOP("OOP", 3, HARD_CONCEPTS, 8),
             CLEAN_CODE("Clean Code", 3, HARD_CONCEPTS, 7),
@@ -140,8 +141,8 @@ JAVA ("Java", 0, null, 8),
             UML("UML", 3, SMALL_LANGUAGES, 9),
             MQ("MQ", 3, SMALL_LANGUAGES, 5),
 
-    OTHER("Other skills", 1, JAVA, 2),
-        OS("Operating systems", 2, OTHER, 8),
+    OTHER("Other skills", 1, JAVA, 3),
+        OS("Operating systems", 2, OTHER, 7),
             WINDOWS("Windows", 3, OS, 6),
                 CMD("cmd", 4, WINDOWS, 6),
             MAC("Mac", 3, OS, 5),
@@ -152,7 +153,7 @@ JAVA ("Java", 0, null, 8),
         APACHE("Apache", 2, OTHER, 6),
     //paste other
             APACHE_SERVICEMIX("Apache ServiceMix", 3, APACHE, 5),
-        MISC("Miscellaneous", 2, OTHER, 5),
+        MISC("Miscellaneous", 2, OTHER, 7),
             DWH("DWH", 3, MISC, 5),
             SOLR("SOLR", 3, MISC, 5),
             CLOUD("Cloud", 3, MISC, 6),
@@ -163,17 +164,20 @@ JAVA ("Java", 0, null, 8),
             GLASS_FISH("GlassFish", 3, MISC, 4);
 
 
-//    private static final long serialVersionUID = 1L;
     public static final int LEVELS = 4;
     public static final int LAYERS = 5;
+
     private String name;
     private int layer;
-    private double points;
-    private double reqPoints[] = new double[LEVELS];
-    private int occurrences;
     private Skill superSkill;
-    private ArrayList<Skill> subSkills = new ArrayList<>();
     private int impactOnSuperSkill; //1-10
+    private ArrayList<Skill> subSkills = new ArrayList<>();
+
+    private double points;
+    private double bruttoPoints;
+    public SkillsHistories.SkillHistory skillHistory = new SkillsHistories.SkillHistory(this);
+    private double[] reqPoints = new double[LEVELS];
+    private int occurrences;
 
 
     //add comment field
@@ -196,7 +200,7 @@ JAVA ("Java", 0, null, 8),
         reqPoints[reqLvl.ordinal()] = Math.round(reqPoints[reqLvl.ordinal()]);
     }
 
-    public void addOccurence() {
+    public void addOccurrence() {
         this.occurrences++;
     }
 
@@ -219,36 +223,45 @@ JAVA ("Java", 0, null, 8),
     }
 
 
-    public void addPoints(double points){
-        addPointsToThisAndSuperSkills(points);
-    }
-
-    private void addPointsToThisAndSubSkills(double points){
-        this.points += points;
-        for (Skill subSkill: subSkills) {
-            subSkill.addPointsToThisAndSubSkills(points * subSkill.impactOnSuperSkill / 10. * (100 - subSkill.points)/100./subSkills.size());
-        }
-
-    }
-
-    private void addPointsToThisAndSuperSkills(double points){
+    public void addPoints(double points, Project project){
 
         this.points += points * (100. - this.points)/100.;
+        skillHistory.addMoment(this, project);
 
         Skill skill = this;
         int subSkillsImpact;
         double pointsMultiplicator = 1;
         for (int i = layer; i > 0; i--){
-            if (i > 0) {
-                subSkillsImpact = 0;
-                for (Skill subSkill : skill.superSkill.subSkills) {
-                    subSkillsImpact += subSkill.impactOnSuperSkill;
-                }
-                pointsMultiplicator *= skill.impactOnSuperSkill / (double) subSkillsImpact * (100. - skill.superSkill.points)/100.;
+            subSkillsImpact = 0;
+            for (Skill subSkill : skill.superSkill.subSkills) {
+                subSkillsImpact += subSkill.impactOnSuperSkill;
             }
+            pointsMultiplicator *= skill.impactOnSuperSkill / (double) subSkillsImpact * (100. - skill.superSkill.points)/100.;
             skill.superSkill.points += points * pointsMultiplicator;
+            skill.superSkill.skillHistory.addMoment(skill.superSkill, project);
             skill = skill.superSkill;
         }
+    }
+
+    public void outdatePoints(){
+        bruttoPoints = points;
+        if (!skillHistory.isEmpty()) {
+            int days = daysFromStart();
+            points *= SkillCalculator.pointsPercentLeftByDays(days) / 100;
+        }
+    }
+
+    private int daysFromStart(){
+        SimpleDateFormat formater=new SimpleDateFormat("yyyy-MM-dd");
+        long d1 = 0;
+        long d2 = 0;
+        try {
+            d1 = formater.parse(formater.format(skillHistory.get(0).date)).getTime();
+            d2 = formater.parse(formater.format(new Date())).getTime();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return (int)(d1-d2)/(1000*60*60*24);
     }
 
     //get/set////////////////////////////////////////////////////////////////////////////////////
@@ -265,6 +278,15 @@ JAVA ("Java", 0, null, 8),
         return points;
     }
 
+    public SkillsHistories.SkillHistory getSkillHistory() {
+        return skillHistory;
+    }
+
+    public void setSkillHistoryAndPoints(SkillsHistories.SkillHistory skillHistory) {
+        this.skillHistory = skillHistory;
+        points = skillHistory.getLastPoints();
+    }
+
     public int getOccurrences() {
         return occurrences;
     }
@@ -279,9 +301,5 @@ JAVA ("Java", 0, null, 8),
 
     public Skill getSuperSkill() {
         return superSkill;
-    }
-
-    public ArrayList<Skill> getSubSkills() {
-        return subSkills;
     }
 }

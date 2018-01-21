@@ -1,7 +1,7 @@
 package controller;
 
-import main.ReqLvl;
-import main.Skill;
+import skills.ReqLvl;
+import skills.Skill;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -23,8 +23,8 @@ class SkillItem {
     SkillItem(Skill skill){
         this.skill = skill;
 
-        TextField minutesTextField = new TextField();
-        minutesTextField.setPrefColumnCount(2);
+        TextField minutesTextField = new NumberTextField(4);
+        minutesTextField.setPrefColumnCount(3);
         minutesTextField.setFont(new Font(9));
 
 //        minutesTextField.setOnKeyReleased(e -> {
@@ -37,7 +37,7 @@ class SkillItem {
         minutesHBox.getChildren().add(new Label("min"));
 
 
-        TextField effortTextField = new TextField();
+        TextField effortTextField = new NumberTextField(3);
         effortTextField.setPrefColumnCount(2);
         effortTextField.setFont(new Font(9));
 
