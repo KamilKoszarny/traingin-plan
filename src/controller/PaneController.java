@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.FXCollections;
 import javafx.concurrent.Task;
 import javafx.scene.input.KeyEvent;
@@ -39,15 +40,17 @@ public class PaneController {
     @FXML
     private TreeTableColumn<SkillItem, Number> pointsColumn;
     @FXML
-    private TreeTableColumn<SkillItem, Number> reqPointsColumn;
+    private TreeTableColumn<SkillItem, Number> percReqColumn;
     @FXML
     private TreeTableColumn<SkillItem, StackPane> progressColumn;
+    @FXML
+    private TreeTableColumn<SkillItem, Number> reqPointsColumn;
     @FXML
     private TreeTableColumn<SkillItem, HBox> minutesColumn;
     @FXML
     private TreeTableColumn<SkillItem, HBox> effortColumn;
     @FXML
-    private TreeTableColumn<SkillItem, HBox> commentColumn;
+    private TreeTableColumn<SkillItem, TextField> commentColumn;
 
     @FXML
     private Label dateLabel;
@@ -158,10 +161,13 @@ public class PaneController {
                 return param.getValue().getValue().getPointsProperty();
             }
         });
-        reqPointsColumn.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<SkillItem, Number>, ObservableValue<Number>>() {
+        percReqColumn.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<SkillItem, Number>, ObservableValue<Number>>() {
             @Override
             public ObservableValue<Number> call(TreeTableColumn.CellDataFeatures<SkillItem, Number> param) {
-                return param.getValue().getValue().getReqPointsPropertyForLevel(SkillItem.reqLvl);
+                double points =  param.getValue().getValue().getPointsProperty().get();
+                double reqPoints =  param.getValue().getValue().getReqPointsPropertyForLevel(SkillItem.reqLvl).get();
+                int percent = (int)(points/reqPoints * 100.);
+                return new SimpleIntegerProperty(percent);
             }
         });
         progressColumn.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<SkillItem, StackPane>, ObservableValue<StackPane>>() {
@@ -190,6 +196,12 @@ public class PaneController {
                 return new ReadOnlyObjectWrapper<>(stackPane);
             }
         });
+        reqPointsColumn.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<SkillItem, Number>, ObservableValue<Number>>() {
+            @Override
+            public ObservableValue<Number> call(TreeTableColumn.CellDataFeatures<SkillItem, Number> param) {
+                return param.getValue().getValue().getReqPointsPropertyForLevel(SkillItem.reqLvl);
+            }
+        });
         minutesColumn.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<SkillItem, HBox>, ObservableValue<HBox>>() {
             @Override
             public ObservableValue<HBox> call(TreeTableColumn.CellDataFeatures<SkillItem, HBox> param) {
@@ -216,6 +228,12 @@ public class PaneController {
                     return param.getValue().getValue().getEffortHBoxWrapper();
             }
         });
+        commentColumn.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<SkillItem, TextField>, ObservableValue<TextField>>(){
+            @Override
+            public ObservableValue<TextField> call(TreeTableColumn.CellDataFeatures<SkillItem, TextField> param) {
+                return param.getValue().getValue().getCommentTextFieldWrapper();
+            }
+        });
 
         skillColumn.setResizable(false);
         pointsColumn.setResizable(false);
@@ -224,7 +242,48 @@ public class PaneController {
         effortColumn.setResizable(false);
 
         progressColumn.setSortable(false);
-        //align comment column left?
+
+        commentColumn.getStyleClass().add("comment-column-style");
+    }
+
+    private void setLook(boolean main){
+        pointsColumn.setVisible(main);
+        percReqColumn.setVisible(main);
+        progressColumn.setVisible(main);
+        reqPointsColumn.setVisible(main);
+
+        requirementsLabel.setVisible(main);
+        juniorRadioButton.setVisible(main);
+        midRadioButton.setVisible(main);
+        seniorRadioButton.setVisible(main);
+        architectRadioButton.setVisible(main);
+
+        if (main) {
+            activityButton.setVisible(true);
+            activityButton.setText("Add activity");
+            activityButton.setTranslateY(0);
+        } else {
+            activityButton.setVisible(false);
+            activityButton.setText("Confirm");
+            activityButton.setTranslateY(165);
+        }
+
+
+        if (!main)
+            treeTableView.getRoot().setExpanded(true);
+        effortColumn.setVisible(!main);
+        minutesColumn.setVisible(!main);
+        commentColumn.setVisible(!main);
+
+        projectText.setVisible(!main);
+        activityTimeLabel.setVisible(!main);
+        newProjectText.setVisible(!main);
+        newProjectTextField.setVisible(!main);
+        addProjectButton.setVisible(false);
+        projectComboBox.setVisible(!main);
+        if (!main)
+            initializeProjectsComboBox();
+        activityCancelButton.setVisible(!main);
     }
 
     private void initializeClock(){
@@ -266,6 +325,7 @@ public class PaneController {
         String color = ReqLvl.JUNIOR.getColor().toString();
         String fxColor = color.substring(2, color.length());
         reqPointsColumn.setStyle("-fx-text-fill: #" + fxColor);
+        percReqColumn.setStyle("-fx-text-fill: #" + fxColor);
 
         levelToggleGroup.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
@@ -300,48 +360,7 @@ public class PaneController {
     private void confirmActivity(){
         addActivity();
         skillsManager.save();
-        skillsManager.showSkills();
     }
-
-    private void setLook(boolean main){
-        pointsColumn.setVisible(main);
-        progressColumn.setVisible(main);
-        reqPointsColumn.setVisible(main);
-
-        requirementsLabel.setVisible(main);
-        juniorRadioButton.setVisible(main);
-        midRadioButton.setVisible(main);
-        seniorRadioButton.setVisible(main);
-        architectRadioButton.setVisible(main);
-
-        if (main) {
-            activityButton.setText("Add activity");
-            activityButton.setTranslateY(0);
-        } else {
-            activityButton.setVisible(false);
-            activityButton.setText("Confirm");
-            activityButton.setTranslateY(165);
-        }
-
-
-
-        if (!main)
-            treeTableView.getRoot().setExpanded(true);
-        effortColumn.setVisible(!main);
-        minutesColumn.setVisible(!main);
-        commentColumn.setVisible(!main);
-
-        projectText.setVisible(!main);
-        activityTimeLabel.setVisible(!main);
-        newProjectText.setVisible(!main);
-        newProjectTextField.setVisible(!main);
-        addProjectButton.setVisible(false);
-        projectComboBox.setVisible(!main);
-        if (!main)
-            initializeProjectsComboBox();
-        activityCancelButton.setVisible(!main);
-    }
-
 
     private void addActivity(){
         TextField minutesTextField;
@@ -382,18 +401,20 @@ public class PaneController {
         TextField effortTextField = (TextField)treeItem.getValue().getEffortHBoxWrapper().get().getUserData();
 
         if (!minutesTextField.getText().isEmpty()) {
-            double effectiveMinutes = readEffectiveMinutes(minutesTextField, effortTextField);
+            int minutes = Integer.parseInt(minutesTextField.getText());
+            double effectiveMinutes = readEffectiveMinutes(minutes, effortTextField);
             double points = SkillCalculator.pointsByMinutes(effectiveMinutes);
             Project project = Project.getProjectByName((String)projectComboBox.getValue());
-            skillsManager.increaseSkill(skill, points, project);
+            String comment = treeItem.getValue().getCommentTextFieldWrapper().get().getText();
+
+            skillsManager.increaseSkill(skill, points, minutes, project, comment);
 
             System.out.println(skill.getName());
-            System.out.println(points + "points added");
+            System.out.println(points + " points added");
         }
     }
 
-    private double readEffectiveMinutes(TextField minutesTextField, TextField effortTextField){
-        double minutes = Double.parseDouble(minutesTextField.getText());
+    private double readEffectiveMinutes(int minutes, TextField effortTextField){
         double effort = 100;
         if(!effortTextField.getText().isEmpty())
             effort = Double.parseDouble(effortTextField.getText());
@@ -412,10 +433,11 @@ public class PaneController {
             minutesTextField = (TextField)treeItem.getValue().getMinutesHBoxWrapper().get().getUserData();
             if (!minutesTextField.getText().isEmpty()) {
                 skillMinutes = Integer.parseInt(minutesTextField.getText());
-                hours += (int)(skillMinutes/60.);
-                minutes += Math.round(skillMinutes%60);
+                minutes += Math.round(skillMinutes);
             }
         }
+        hours = (int)(minutes/60.);
+        minutes = minutes%60;
 
         activityTimeLabel.setText("Time on activity:\n" + hours + " h " + minutes + " min");
     }

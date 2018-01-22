@@ -10,7 +10,7 @@ public class SkillsReqImporter {
 
     private final int HEADER_ROW_INDEX = 0;
     private final int MAX_ROWS = 100;
-    private final String skillsFilePath = "../Plan.xlsx";
+    private final String skillsFilePath = "Plan.xlsx";
     private final String skillSheetName = "Job requirements";
     private int linkColumnIndex;
     private int levelColumnIndex;
@@ -35,7 +35,14 @@ public class SkillsReqImporter {
         findColumns();
 
         allOffersCount = Math.min(HEADER_ROW_INDEX + MAX_ROWS, skillSheet.getLastRowNum());
-        System.out.println("All offers: " + allOffersCount);
+    }
+
+    public boolean fileExists(){
+        File f = new File(skillsFilePath);
+        if(f.exists() && !f.isDirectory()) {
+            return true;
+        }
+        return false;
     }
 
     private void openFile(String pathName){
@@ -68,6 +75,9 @@ public class SkillsReqImporter {
     }
 
     public SkillsSet importSkillsReq(ReqLvl[] reqLvls){
+        System.out.println("");
+        System.out.println("Skill requirements imported: ");
+        System.out.println("All offers: " + allOffersCount);
         for (ReqLvl reqLvl: reqLvls) {
             skills = importSkillsReq(reqLvl);
         }

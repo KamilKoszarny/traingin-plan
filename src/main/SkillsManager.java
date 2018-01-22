@@ -8,6 +8,7 @@ import java.util.Set;
 public class SkillsManager {
 
     private SkillsSet skills = new SkillsSet();
+    SkillsReqImporter skillsReqImporter = new SkillsReqImporter(skills);
     private SkillsLoadSaver skillsLoadSaver = new SkillsLoadSaver();
 
     SkillsManager(){
@@ -15,18 +16,18 @@ public class SkillsManager {
 
         if (skillsLoadSaver.fileExists()) {
             skills = skillsLoadSaver.loadFromFile(skills);
-//            showSkillsHistories();
+            showSkillsHistories();
         }
 
-        SkillsReqImporter skillsReqImporter = new SkillsReqImporter(skills);
-        skills = skillsReqImporter.importSkillsReq(ReqLvl.values());
+        if (skillsReqImporter.fileExists())
+            skills = skillsReqImporter.importSkillsReq(ReqLvl.values());
 
         decreaseSkillsByTime();
     }
 
 
-    public void increaseSkill(Skill skill, double points, Project project){
-        skill.addPoints(points, project);
+    public void increaseSkill(Skill skill, double points, int minutes, Project project, String comment){
+        skill.increaseSkill(points, minutes, project, comment);
     }
 
     public void decreaseSkillsByTime(){
@@ -71,8 +72,26 @@ public class SkillsManager {
                 format = "%n%-30s";
                 System.out.printf(format, "");
                 for (int i = 0; i < skill.getSkillHistory().size(); i++) {
+                    format = "%12s%5.2f";
+                    System.out.printf(format, "brutto:", skill.getSkillHistory().get(i).bruttoPoints);
+                }
+                format = "%n%-30s";
+                System.out.printf(format, "");
+                for (int i = 0; i < skill.getSkillHistory().size(); i++) {
+                    format = "%10s%7d";
+                    System.out.printf(format, "minutes:", skill.getSkillHistory().get(i).minutes);
+                }
+                format = "%n%-30s";
+                System.out.printf(format, "");
+                for (int i = 0; i < skill.getSkillHistory().size(); i++) {
                     format = "%17s";
                     System.out.printf(format, skill.getSkillHistory().get(i).project.getName());
+                }
+                format = "%n%-30s";
+                System.out.printf(format, "");
+                for (int i = 0; i < skill.getSkillHistory().size(); i++) {
+                    format = "%17s";
+                    System.out.printf(format, skill.getSkillHistory().get(i).comment);
                 }
                 format = "%n%-30s";
                 System.out.printf(format, "");
@@ -90,6 +109,7 @@ public class SkillsManager {
             }
         }
     }
+
 
     private String generateLayerSpaces(Skill skill){
         StringBuilder builder = new StringBuilder();

@@ -1,13 +1,13 @@
 package skills;
 
 public class SkillCalculator {
-    private static final double x = 0.1;
+    private static final double pointsPerHour = 0.125;
 
 
     public static double pointsByMinutes(double minutes){
         double points = 0;
         for (int i = 0; i < minutes; i++){
-            points += (100.0 - points)/6000.0 * x;
+            points += (100.0-points)/100 * pointsPerHour /60;
         }
         return points;
     }
@@ -23,7 +23,7 @@ public class SkillCalculator {
 
     public static double pointsByExpHours(int expHours, double points){
         for (int i = 0; i < expHours; i++){
-            points += (100.0 - points)/100.0*x;
+            points += (100.0 - points)/100.0* pointsPerHour;
         }
         return points;
     }

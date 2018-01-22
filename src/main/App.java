@@ -26,6 +26,7 @@ public class App extends Application{
 
         StackPane stackPane = fxmlLoader.load();
         Scene scene = new Scene(stackPane);
+        scene.getStylesheets().add("style.css");
         primaryStage.setScene(scene);
         primaryStage.setTitle("Training Plan");
         primaryStage.show();
@@ -34,8 +35,8 @@ public class App extends Application{
     }
 
     public static void main(String[] args) {
-//        System.out.println(SkillCalculator.pointsByMinutes(60*8));
-//        System.out.println(SkillCalculator.pointsPercentLeftByDays(300));
+//        System.out.println(SkillCalculator.pointsByMinutes(480*100));
+//        System.out.println(SkillCalculator.pointsPercentLeftByDays(360));
         disableWarning();
         launch(args);
     }

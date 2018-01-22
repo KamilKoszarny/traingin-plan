@@ -1,7 +1,5 @@
 package skills;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -45,6 +43,7 @@ JAVA ("Java", 0, null, 8),
         HIBERNATE("Hibernate", 2, FRAMEWORKS, 6),
         JSF("JSF", 2, FRAMEWORKS, 5),
         STRUTS("Struts", 2, FRAMEWORKS, 4),
+        ANDROID("Android", 2, FRAMEWORKS, 6),
 
     TOOLS ("Tools", 1, JAVA, 5),
         VERSION_CONTROL("Version Control", 2, TOOLS, 7),
@@ -63,6 +62,7 @@ JAVA ("Java", 0, null, 8),
             INTELLIJ("IntelliJ", 3, IDE, 9),
             ECLIPSE("Eclipse", 3, IDE, 3),
             NETBEANS("NetBeans", 3, IDE, 6),
+            NOTEPAD("Notepad++", 3, IDE, 5),
         AUTOMATION("Automation", 2, TOOLS, 6),
             JENKINS("Jenkins", 3, AUTOMATION, 6),
             GRADLE("Gradle", 3, AUTOMATION, 7),
@@ -121,13 +121,14 @@ JAVA ("Java", 0, null, 8),
             JS_OTHER("JS Other", 3, JS, 7),
                 JQUERY("JQuery", 4, JS_OTHER, 8),
                 TYPESCRIPT("TypeScript", 4, JS_OTHER, 8),
-        WEB("HTML/CSS", 2, OTHER_LANGUAGES, 7),
+        WEB("Web", 2, OTHER_LANGUAGES, 7),
             HTML("HTML", 3, WEB, 7),
                 HTML5("HTML 5", 4, HTML, 8),
                 THYMELEAF("Thymeleaf", 4, HTML, 6),
                 JSP("JSP", 4, HTML, 5),
             CSS("CSS", 3, WEB, 6),
                 RWD("RWD", 4, CSS, 5),
+            PHP("PHP", 3, WEB, 7),
             CMS("CMS", 3, WEB, 4),
             XML("XML", 3, WEB, 5),
                 SOAP("SOAP", 4, XML, 5),
@@ -136,6 +137,7 @@ JAVA ("Java", 0, null, 8),
             CPP("C++", 3, OTHER_OTHER_LANGUAGES, 5),
             SCALA("Scala", 3, OTHER_OTHER_LANGUAGES, 6),
             KAREL("KAREL", 3, OTHER_OTHER_LANGUAGES, 2),
+            ARDUINO("Arduino", 3, OTHER_OTHER_LANGUAGES, 4),
         SMALL_LANGUAGES("\"Small\" languages", 2, OTHER_LANGUAGES, 5),
             JSON("JSON", 3, SMALL_LANGUAGES, 6),
             UML("UML", 3, SMALL_LANGUAGES, 9),
@@ -175,6 +177,7 @@ JAVA ("Java", 0, null, 8),
 
     private double points;
     private double bruttoPoints;
+    private int minutes;
     public SkillsHistories.SkillHistory skillHistory = new SkillsHistories.SkillHistory(this);
     private double[] reqPoints = new double[LEVELS];
     private int occurrences;
@@ -205,7 +208,7 @@ JAVA ("Java", 0, null, 8),
     }
 
     public void addReqPointsBySuperSkill(ReqLvl reqLvl){
-        reqPoints[reqLvl.ordinal()] += superSkill.reqPoints[reqLvl.ordinal()] * impactOnSuperSkill / 10 * (100 - reqPoints[reqLvl.ordinal()])/100 * (1 + reqLvl.ordinal()/10.);
+        reqPoints[reqLvl.ordinal()] += superSkill.reqPoints[reqLvl.ordinal()] * impactOnSuperSkill / 10 * (100 - reqPoints[reqLvl.ordinal()])/100 * (0.75 + reqLvl.ordinal()/5.);
         reqPoints[reqLvl.ordinal()] = Math.round(reqPoints[reqLvl.ordinal()]);
         if (reqPoints[reqLvl.ordinal()] > 99)
             reqPoints[reqLvl.ordinal()] = 99;
@@ -216,17 +219,21 @@ JAVA ("Java", 0, null, 8),
         for (Skill subSkill : subSkills) {
             pointsFromSubSkills += subSkill.reqPoints[reqLvl.ordinal()] * subSkill.impactOnSuperSkill / subSkills.size() / 10;
         }
-        reqPoints[reqLvl.ordinal()] += pointsFromSubSkills * (100 - reqPoints[reqLvl.ordinal()])/100;
+        reqPoints[reqLvl.ordinal()] += pointsFromSubSkills * (100 - reqPoints[reqLvl.ordinal()])/100 * (0.1 + reqLvl.ordinal()/5.);;
         reqPoints[reqLvl.ordinal()] = Math.round(reqPoints[reqLvl.ordinal()]);
         if (reqPoints[reqLvl.ordinal()] > 99)
             reqPoints[reqLvl.ordinal()] = 99;
     }
 
 
-    public void addPoints(double points, Project project){
+    public void increaseSkill(double points, int minutes, Project project, String comment){
 
-        this.points += points * (100. - this.points)/100.;
-        skillHistory.addMoment(this, project);
+        double addedPoints =  points * (100. - this.points)/100.;
+        addPointsAndRest(this, addedPoints, minutes, project, comment);
+//        this.points += addedPoints;
+//        this.bruttoPoints += addedPoints;
+//        this.minutes += minutes;
+//        skillHistory.addMoment(this, project);
 
         Skill skill = this;
         int subSkillsImpact;
@@ -237,31 +244,32 @@ JAVA ("Java", 0, null, 8),
                 subSkillsImpact += subSkill.impactOnSuperSkill;
             }
             pointsMultiplicator *= skill.impactOnSuperSkill / (double) subSkillsImpact * (100. - skill.superSkill.points)/100.;
-            skill.superSkill.points += points * pointsMultiplicator;
-            skill.superSkill.skillHistory.addMoment(skill.superSkill, project);
+            addedPoints = points * pointsMultiplicator;
+            addPointsAndRest(skill.superSkill, addedPoints, minutes, project, comment);
             skill = skill.superSkill;
         }
     }
 
+    private void addPointsAndRest(Skill skill, double addedPoints, int minutes, Project project, String comment){
+        skill.points += addedPoints;
+        skill.bruttoPoints += addedPoints;
+        skill.minutes += minutes;
+        skill.skillHistory.addMoment(skill, project, comment);
+    }
+
+
     public void outdatePoints(){
-        bruttoPoints = points;
         if (!skillHistory.isEmpty()) {
-            int days = daysFromStart();
+            int days = daysFromLast();
             points *= SkillCalculator.pointsPercentLeftByDays(days) / 100;
+//            System.out.println("points outdated, days: " + days);
         }
     }
 
-    private int daysFromStart(){
-        SimpleDateFormat formater=new SimpleDateFormat("yyyy-MM-dd");
-        long d1 = 0;
-        long d2 = 0;
-        try {
-            d1 = formater.parse(formater.format(skillHistory.get(0).date)).getTime();
-            d2 = formater.parse(formater.format(new Date())).getTime();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return (int)(d1-d2)/(1000*60*60*24);
+    private int daysFromLast(){
+        long d1 = skillHistory.get(skillHistory.size() - 1).date.getTime();
+        long d2 = new Date().getTime();
+        return (int)((d2-d1)/(1000*60*60*24));
     }
 
     //get/set////////////////////////////////////////////////////////////////////////////////////
@@ -278,6 +286,14 @@ JAVA ("Java", 0, null, 8),
         return points;
     }
 
+    public double getBruttoPoints() {
+        return bruttoPoints;
+    }
+
+    public int getMinutes() {
+        return minutes;
+    }
+
     public SkillsHistories.SkillHistory getSkillHistory() {
         return skillHistory;
     }
@@ -285,6 +301,8 @@ JAVA ("Java", 0, null, 8),
     public void setSkillHistoryAndPoints(SkillsHistories.SkillHistory skillHistory) {
         this.skillHistory = skillHistory;
         points = skillHistory.getLastPoints();
+        bruttoPoints = skillHistory.getLastBruttoPoints();
+        minutes = skillHistory.getLastMinutes();
     }
 
     public int getOccurrences() {

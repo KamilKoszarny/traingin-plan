@@ -7,46 +7,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94e82e70-2175-4cf1-9e84-ac736b49097b" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/controller/NumberTextField.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/skills/Project.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/skills/SkillsHistories.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/skills/SkillsSet.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Plan.xlsx" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/TrainingPlan_jar/Plan.xlsx" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/TrainingPlan_jar/skillsHistories.ser" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$12.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/style.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/Plan.xlsx" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/style.css" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/TrainingPlan.iml" afterPath="$PROJECT_DIR$/TrainingPlan.iml" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$2.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$3.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$4.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$5.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$6.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$7.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$8.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/TrainingPlan.jar - Shortcut.lnk" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TrainingPlan_jar/TrainingPlan.jar" afterPath="$PROJECT_DIR$/out/artifacts/TrainingPlan_jar/TrainingPlan.jar" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$1.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$1.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$10.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$10.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$11.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$11.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$12.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$13.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$13.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$14.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$2.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$2.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$3.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$3.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$4.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$4.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$5.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$5.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$6.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$6.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$7.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$7.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$8.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$8.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$9$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$9.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$9.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController.class" />
       <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/SkillItem.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/SkillItem.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/SkillItemsGenerator.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/SkillItemsGenerator.class" />
       <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/fxml/MainWindow.fxml" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/fxml/MainWindow.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/main/App.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/main/ReqLvl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/main/Skill.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/main/SkillCalculator.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/main/Skills.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/main/SkillsLoadSaver.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/main/SkillsManager.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/main/SkillsReqImporter.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/main/App.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/main/App.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/main/SkillsManager.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/main/SkillsManager.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/skills/Skill.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/skills/Skill.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillCalculator.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillCalculator.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsHistories$SkillHistory$SkillMoment.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsHistories$SkillHistory$SkillMoment.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsHistories$SkillHistory.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsHistories$SkillHistory.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsLoadSaver.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsLoadSaver.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsReqImporter.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsReqImporter.class" />
       <change beforePath="$PROJECT_DIR$/resources/fxml/MainWindow.fxml" afterPath="$PROJECT_DIR$/resources/fxml/MainWindow.fxml" />
-      <change beforePath="$PROJECT_DIR$/skills.ser" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/skills.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/skillsHistories.ser" afterPath="$PROJECT_DIR$/skillsHistories.ser" />
       <change beforePath="$PROJECT_DIR$/src/controller/PaneController.java" afterPath="$PROJECT_DIR$/src/controller/PaneController.java" />
       <change beforePath="$PROJECT_DIR$/src/controller/SkillItem.java" afterPath="$PROJECT_DIR$/src/controller/SkillItem.java" />
-      <change beforePath="$PROJECT_DIR$/src/controller/SkillItemsGenerator.java" afterPath="$PROJECT_DIR$/src/controller/SkillItemsGenerator.java" />
       <change beforePath="$PROJECT_DIR$/src/main/App.java" afterPath="$PROJECT_DIR$/src/main/App.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/ReqLvl.java" afterPath="$PROJECT_DIR$/src/skills/ReqLvl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Skill.java" afterPath="$PROJECT_DIR$/src/skills/Skill.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/SkillCalculator.java" afterPath="$PROJECT_DIR$/src/skills/SkillCalculator.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Skills.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/SkillsLoadSaver.java" afterPath="$PROJECT_DIR$/src/skills/SkillsLoadSaver.java" />
       <change beforePath="$PROJECT_DIR$/src/main/SkillsManager.java" afterPath="$PROJECT_DIR$/src/main/SkillsManager.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/SkillsReqImporter.java" afterPath="$PROJECT_DIR$/src/skills/SkillsReqImporter.java" />
+      <change beforePath="$PROJECT_DIR$/src/skills/Skill.java" afterPath="$PROJECT_DIR$/src/skills/Skill.java" />
+      <change beforePath="$PROJECT_DIR$/src/skills/SkillCalculator.java" afterPath="$PROJECT_DIR$/src/skills/SkillCalculator.java" />
+      <change beforePath="$PROJECT_DIR$/src/skills/SkillsHistories.java" afterPath="$PROJECT_DIR$/src/skills/SkillsHistories.java" />
+      <change beforePath="$PROJECT_DIR$/src/skills/SkillsLoadSaver.java" afterPath="$PROJECT_DIR$/src/skills/SkillsLoadSaver.java" />
+      <change beforePath="$PROJECT_DIR$/src/skills/SkillsReqImporter.java" afterPath="$PROJECT_DIR$/src/skills/SkillsReqImporter.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,8 +67,8 @@
       <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="27" column="43" lean-forward="false" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
               <folding>
                 <element signature="method#disableWarning#0;class#App#0" expanded="false" />
               </folding>
@@ -70,16 +76,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SkillCalculator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/skills/SkillCalculator.java">
+      <file leaf-file-name="SkillsManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/SkillsManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="40" lean-forward="true" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
-              <folding>
-                <element signature="e#883#884#0" expanded="true" />
-                <element signature="e#935#936#0" expanded="true" />
-                <marker date="1516552802297" expanded="true" signature="893:936" ph="{...}" />
-              </folding>
+            <state relative-caret-position="272">
+              <caret line="22" column="47" lean-forward="false" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -87,18 +89,27 @@
       <file leaf-file-name="PaneController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/PaneController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="117" column="77" lean-forward="true" selection-start-line="117" selection-start-column="77" selection-end-line="117" selection-end-column="77" />
+            <state relative-caret-position="338">
+              <caret line="257" column="43" lean-forward="true" selection-start-line="257" selection-start-column="43" selection-end-line="257" selection-end-column="43" />
               <folding>
-                <element signature="class#2245:2595" expanded="false" />
-                <element signature="class#2643:2801" expanded="false" />
-                <element signature="class#2851:3059" expanded="false" />
-                <element signature="method#initializeTreeTable#0;class#PaneController#0" expanded="false" />
-                <element signature="method#initializeClock#0;class#PaneController#0" expanded="false" />
-                <element signature="method#initializeRequirementsToggleGroup#0;class#PaneController#0" expanded="false" />
-                <element signature="e#11584#11585#0" expanded="true" />
-                <element signature="e#11647#11648#0" expanded="true" />
-                <element signature="method#nextTreeItem#1;class#PaneController#0" expanded="false" />
+                <element signature="e#2874#2875#0" expanded="true" />
+                <element signature="e#2919#2920#0" expanded="true" />
+                <element signature="e#8721#8722#0" expanded="true" />
+                <element signature="e#8793#8794#0" expanded="true" />
+                <element signature="e#14141#14142#0" expanded="true" />
+                <element signature="e#14204#14205#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Skill.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/skills/Skill.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="213" column="45" lean-forward="false" selection-start-line="213" selection-start-column="45" selection-end-line="213" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -107,64 +118,24 @@
       <file leaf-file-name="SkillsHistories.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/skills/SkillsHistories.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="43" column="43" lean-forward="false" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SkillsManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/SkillsManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+            <state relative-caret-position="391">
+              <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
               <folding>
-                <element signature="e#730#731#0" expanded="true" />
-                <element signature="e#778#779#0" expanded="true" />
-                <element signature="e#3788#3789#0" expanded="true" />
-                <element signature="e#3817#3818#0" expanded="true" />
-                <element signature="e#3843#3844#0" expanded="true" />
-                <element signature="e#3893#3894#0" expanded="true" />
+                <element signature="e#827#828#0" expanded="true" />
+                <element signature="e#896#897#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Project.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/skills/Project.java">
+      <file leaf-file-name="SkillCalculator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/skills/SkillCalculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="30" column="24" lean-forward="false" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Skill.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/skills/Skill.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="247" column="38" lean-forward="true" selection-start-line="247" selection-start-column="38" selection-end-line="247" selection-end-column="38" />
+            <state relative-caret-position="289">
+              <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#10979#10980#0" expanded="true" />
-                <element signature="e#11006#11007#0" expanded="true" />
-                <element signature="e#11035#11036#0" expanded="true" />
-                <element signature="e#11063#11064#0" expanded="true" />
-                <element signature="e#11096#11097#0" expanded="true" />
-                <element signature="e#11125#11126#0" expanded="true" />
-                <element signature="e#11186#11187#0" expanded="true" />
-                <element signature="e#11221#11222#0" expanded="true" />
-                <element signature="method#setSkillHistoryAndPoints#0;class#Skill#0" expanded="false" />
-                <element signature="e#11438#11439#0" expanded="true" />
-                <element signature="e#11472#11473#0" expanded="true" />
-                <element signature="e#11529#11530#0" expanded="true" />
-                <element signature="e#11579#11580#0" expanded="true" />
-                <element signature="e#11616#11617#0" expanded="true" />
-                <element signature="e#11648#11649#0" expanded="true" />
-                <element signature="e#11684#11685#0" expanded="true" />
-                <element signature="e#11717#11718#0" expanded="true" />
+                <element signature="e#921#922#0" expanded="true" />
+                <element signature="e#973#974#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -173,19 +144,17 @@
       <file leaf-file-name="SkillsReqImporter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/skills/SkillsReqImporter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="878">
-              <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+            <state relative-caret-position="277">
+              <caret line="180" column="38" lean-forward="false" selection-start-line="180" selection-start-column="38" selection-end-line="180" selection-end-column="38" />
               <folding>
                 <element signature="method#SkillsReqImporter#0;class#SkillsReqImporter#0" expanded="false" />
                 <element signature="method#openFile#0;class#SkillsReqImporter#0" expanded="false" />
                 <element signature="method#findColumns#0;class#SkillsReqImporter#0" expanded="false" />
-                <element signature="method#importSkillsReq#0;class#SkillsReqImporter#0" expanded="false" />
                 <element signature="method#cellIsString#0;class#SkillsReqImporter#0" expanded="false" />
                 <element signature="method#handleStringCell#0;class#SkillsReqImporter#0" expanded="false" />
                 <element signature="method#tryToSaveSkillReqFromCell#0;class#SkillsReqImporter#0" expanded="false" />
                 <element signature="method#skillExists#0;class#SkillsReqImporter#0" expanded="false" />
                 <element signature="method#saveSkillReq#0;class#SkillsReqImporter#0" expanded="false" />
-                <element signature="method#addSuperSkillReqPoints#0;class#SkillsReqImporter#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -194,8 +163,8 @@
       <file leaf-file-name="SkillsLoadSaver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/skills/SkillsLoadSaver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="54" column="32" lean-forward="true" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
+            <state relative-caret-position="139">
+              <caret line="34" column="21" lean-forward="false" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -235,9 +204,12 @@
       <find>label</find>
       <find>pointsHistory</find>
       <find>syst</find>
-      <find>incre</find>
       <find>comb</find>
       <find>addpr</find>
+      <find>brutt</find>
+      <find>system</find>
+      <find>incre</find>
+      <find>color</find>
     </findStrings>
     <replaceStrings>
       <replace>,</replace>
@@ -298,19 +270,19 @@
         <option value="$PROJECT_DIR$/src/controller/SkillItem.java" />
         <option value="$PROJECT_DIR$/resources/fxml/MainWindow.fxml" />
         <option value="$PROJECT_DIR$/src/skills/SkillHistory.java" />
-        <option value="$PROJECT_DIR$/src/skills/SkillsHistories.java" />
         <option value="$PROJECT_DIR$/src/skills/Project.java" />
+        <option value="$PROJECT_DIR$/src/main/App.java" />
+        <option value="$PROJECT_DIR$/src/skills/SkillsHistories.java" />
+        <option value="$PROJECT_DIR$/src/skills/SkillsLoadSaver.java" />
         <option value="$PROJECT_DIR$/src/skills/SkillsReqImporter.java" />
         <option value="$PROJECT_DIR$/src/skills/SkillCalculator.java" />
-        <option value="$PROJECT_DIR$/src/skills/SkillsLoadSaver.java" />
         <option value="$PROJECT_DIR$/src/main/SkillsManager.java" />
-        <option value="$PROJECT_DIR$/src/controller/PaneController.java" />
         <option value="$PROJECT_DIR$/src/skills/Skill.java" />
-        <option value="$PROJECT_DIR$/src/main/App.java" />
+        <option value="$PROJECT_DIR$/src/controller/PaneController.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -334,22 +306,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="TrainingPlan" type="cbb8eebc:String" user="TrainingPlan" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="TrainingPlan" type="cbb8eebc:String" user="TrainingPlan" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -361,7 +317,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -374,6 +329,24 @@
               <item name="TrainingPlan" type="b2602c69:ProjectViewProjectNode" />
               <item name="TrainingPlan" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrainingPlan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrainingPlan" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrainingPlan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrainingPlan" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrainingPlan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrainingPlan" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="TrainingPlan" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TrainingPlan" type="b2602c69:ProjectViewProjectNode" />
@@ -395,12 +368,6 @@
               <item name="TrainingPlan" type="b2602c69:ProjectViewProjectNode" />
               <item name="TrainingPlan" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrainingPlan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrainingPlan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -413,19 +380,33 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="TrainingPlan" type="cbb8eebc:String" user="TrainingPlan" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="TrainingPlan" type="cbb8eebc:String" user="TrainingPlan" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Szkolenia\Java\TrainingPlan\src" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="skills" />
       <recent name="TrainingPlan1" />
@@ -433,6 +414,9 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="skills" />
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Szkolenia\Java\TrainingPlan\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -566,34 +550,34 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32753164" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32753164" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29746836" sideWeight="0.5058565" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29746836" sideWeight="0.4941435" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29746836" sideWeight="0.4941435" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17569546" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3971519" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="15" side_tool="false" content_ui="combo" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32753164" sideWeight="0.4956076" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -603,7 +587,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="44" />
+      <option name="time" value="45" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -655,10 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="26" column="53" lean-forward="false" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
-          <folding>
-            <element signature="e#233#234#0" expanded="false" />
-            <element signature="e#269#270#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -675,7 +655,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
           <caret line="44" column="9" lean-forward="false" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -683,7 +662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
           <caret line="26" column="45" lean-forward="false" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -691,13 +669,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-352">
           <caret line="10" column="39" lean-forward="true" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#230#231#0" expanded="false" />
-            <element signature="e#276#277#0" expanded="false" />
-            <element signature="e#673#674#0" expanded="false" />
-            <element signature="e#718#719#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -713,7 +684,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
           <caret line="122" column="19" lean-forward="false" selection-start-line="122" selection-start-column="19" selection-end-line="122" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -721,80 +691,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
           <caret line="471" column="28" lean-forward="false" selection-start-line="471" selection-start-column="28" selection-end-line="471" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/skills/SkillHistory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="27" column="29" lean-forward="true" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/skills/SkillHistory.java" />
     <entry file="file://$PROJECT_DIR$/resources/fxml/MainWindow.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="27" column="69" lean-forward="false" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/skills/SkillCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="40" lean-forward="true" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
-          <folding>
-            <element signature="e#883#884#0" expanded="true" />
-            <element signature="e#935#936#0" expanded="true" />
-            <marker date="1516552802297" expanded="true" signature="893:936" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/skills/SkillsReqImporter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="878">
-          <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-          <folding>
-            <element signature="method#SkillsReqImporter#0;class#SkillsReqImporter#0" expanded="false" />
-            <element signature="method#openFile#0;class#SkillsReqImporter#0" expanded="false" />
-            <element signature="method#findColumns#0;class#SkillsReqImporter#0" expanded="false" />
-            <element signature="method#importSkillsReq#0;class#SkillsReqImporter#0" expanded="false" />
-            <element signature="method#cellIsString#0;class#SkillsReqImporter#0" expanded="false" />
-            <element signature="method#handleStringCell#0;class#SkillsReqImporter#0" expanded="false" />
-            <element signature="method#tryToSaveSkillReqFromCell#0;class#SkillsReqImporter#0" expanded="false" />
-            <element signature="method#skillExists#0;class#SkillsReqImporter#0" expanded="false" />
-            <element signature="method#saveSkillReq#0;class#SkillsReqImporter#0" expanded="false" />
-            <element signature="method#addSuperSkillReqPoints#0;class#SkillsReqImporter#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/SkillsManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-          <folding>
-            <element signature="e#730#731#0" expanded="true" />
-            <element signature="e#778#779#0" expanded="true" />
-            <element signature="e#3788#3789#0" expanded="true" />
-            <element signature="e#3817#3818#0" expanded="true" />
-            <element signature="e#3843#3844#0" expanded="true" />
-            <element signature="e#3893#3894#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/skills/SkillsLoadSaver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="54" column="32" lean-forward="true" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
-          <folding />
+        <state relative-caret-position="231">
+          <caret line="27" column="69" lean-forward="false" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -806,63 +713,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/PaneController.java">
+    <entry file="file://$PROJECT_DIR$/src/skills/SkillCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="117" column="77" lean-forward="true" selection-start-line="117" selection-start-column="77" selection-end-line="117" selection-end-column="77" />
+        <state relative-caret-position="289">
+          <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
           <folding>
-            <element signature="class#2245:2595" expanded="false" />
-            <element signature="class#2643:2801" expanded="false" />
-            <element signature="class#2851:3059" expanded="false" />
-            <element signature="method#initializeTreeTable#0;class#PaneController#0" expanded="false" />
-            <element signature="method#initializeClock#0;class#PaneController#0" expanded="false" />
-            <element signature="method#initializeRequirementsToggleGroup#0;class#PaneController#0" expanded="false" />
-            <element signature="e#11584#11585#0" expanded="true" />
-            <element signature="e#11647#11648#0" expanded="true" />
-            <element signature="method#nextTreeItem#1;class#PaneController#0" expanded="false" />
+            <element signature="e#921#922#0" expanded="true" />
+            <element signature="e#973#974#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/skills/SkillsHistories.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="43" column="43" lean-forward="false" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
+        <state relative-caret-position="391">
+          <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+          <folding>
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#896#897#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/skills/SkillsLoadSaver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="34" column="21" lean-forward="false" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/SkillsManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="22" column="47" lean-forward="false" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/skills/SkillsReqImporter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="180" column="38" lean-forward="false" selection-start-line="180" selection-start-column="38" selection-end-line="180" selection-end-column="38" />
+          <folding>
+            <element signature="method#SkillsReqImporter#0;class#SkillsReqImporter#0" expanded="false" />
+            <element signature="method#openFile#0;class#SkillsReqImporter#0" expanded="false" />
+            <element signature="method#findColumns#0;class#SkillsReqImporter#0" expanded="false" />
+            <element signature="method#cellIsString#0;class#SkillsReqImporter#0" expanded="false" />
+            <element signature="method#handleStringCell#0;class#SkillsReqImporter#0" expanded="false" />
+            <element signature="method#tryToSaveSkillReqFromCell#0;class#SkillsReqImporter#0" expanded="false" />
+            <element signature="method#skillExists#0;class#SkillsReqImporter#0" expanded="false" />
+            <element signature="method#saveSkillReq#0;class#SkillsReqImporter#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/skills/Skill.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="247" column="38" lean-forward="true" selection-start-line="247" selection-start-column="38" selection-end-line="247" selection-end-column="38" />
+        <state relative-caret-position="183">
+          <caret line="213" column="45" lean-forward="false" selection-start-line="213" selection-start-column="45" selection-end-line="213" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#10979#10980#0" expanded="true" />
-            <element signature="e#11006#11007#0" expanded="true" />
-            <element signature="e#11035#11036#0" expanded="true" />
-            <element signature="e#11063#11064#0" expanded="true" />
-            <element signature="e#11096#11097#0" expanded="true" />
-            <element signature="e#11125#11126#0" expanded="true" />
-            <element signature="e#11186#11187#0" expanded="true" />
-            <element signature="e#11221#11222#0" expanded="true" />
-            <element signature="method#setSkillHistoryAndPoints#0;class#Skill#0" expanded="false" />
-            <element signature="e#11438#11439#0" expanded="true" />
-            <element signature="e#11472#11473#0" expanded="true" />
-            <element signature="e#11529#11530#0" expanded="true" />
-            <element signature="e#11579#11580#0" expanded="true" />
-            <element signature="e#11616#11617#0" expanded="true" />
-            <element signature="e#11648#11649#0" expanded="true" />
-            <element signature="e#11684#11685#0" expanded="true" />
-            <element signature="e#11717#11718#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/PaneController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="257" column="43" lean-forward="true" selection-start-line="257" selection-start-column="43" selection-end-line="257" selection-end-column="43" />
+          <folding>
+            <element signature="e#2874#2875#0" expanded="true" />
+            <element signature="e#2919#2920#0" expanded="true" />
+            <element signature="e#8721#8722#0" expanded="true" />
+            <element signature="e#8793#8794#0" expanded="true" />
+            <element signature="e#14141#14142#0" expanded="true" />
+            <element signature="e#14204#14205#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="27" column="43" lean-forward="false" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
           <folding>
             <element signature="method#disableWarning#0;class#App#0" expanded="false" />
           </folding>

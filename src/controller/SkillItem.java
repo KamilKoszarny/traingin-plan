@@ -18,6 +18,7 @@ class SkillItem {
     private Skill skill;
     private HBox minutesHBox = new HBox();
     private HBox effortHBox = new HBox();
+    private TextField commentTextField = new TextField();
 
 
     SkillItem(Skill skill){
@@ -26,11 +27,6 @@ class SkillItem {
         TextField minutesTextField = new NumberTextField(4);
         minutesTextField.setPrefColumnCount(3);
         minutesTextField.setFont(new Font(9));
-
-//        minutesTextField.setOnKeyReleased(e -> {
-//            addTimeToLabel();
-//            System.out.println("bkl");
-//        });
 
         minutesHBox.setUserData(minutesTextField);
         minutesHBox.getChildren().add(minutesTextField);
@@ -44,6 +40,9 @@ class SkillItem {
         effortHBox.setUserData(effortTextField);
         effortHBox.getChildren().add(effortTextField);
         effortHBox.getChildren().add(new Label("%"));
+
+        commentTextField = new TextField();
+        commentTextField.setFont(new Font(9));
     }
 
     public Skill getSkill() {
@@ -77,4 +76,10 @@ class SkillItem {
     public ReadOnlyObjectWrapper<HBox> getEffortHBoxWrapper(){
         return new ReadOnlyObjectWrapper<>(effortHBox);
     }
+
+    public ReadOnlyObjectWrapper<TextField> getCommentTextFieldWrapper(){
+        return new ReadOnlyObjectWrapper<>(commentTextField);
+    }
+
+
 }

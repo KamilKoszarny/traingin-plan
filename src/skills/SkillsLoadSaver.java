@@ -30,7 +30,6 @@ public class SkillsLoadSaver {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     public SkillsSet loadFromFile(SkillsSet skills){
@@ -50,7 +49,7 @@ public class SkillsLoadSaver {
             skillsHistories = (SkillsHistories)oInS.readObject();
             oInS.close();
             fInS.close();
-            System.out.println("skillsHistories readed");
+            System.out.println("skillsHistories readed for: ");
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -59,7 +58,7 @@ public class SkillsLoadSaver {
             assert skillsHistories != null;
             for (SkillsHistories.SkillHistory skillHistory: skillsHistories) {
                 if (skill == skillHistory.skill && skillHistory.size() != 0) {
-                    System.out.println(skill);
+                    System.out.print(skill + ", ");
                     skill.setSkillHistoryAndPoints(skillHistory);
                     for (SkillsHistories.SkillHistory.SkillMoment moment: skillHistory) {
                         Project.projects.add(moment.project);
