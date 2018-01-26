@@ -15,7 +15,7 @@ public class SkillCalculator {
     public static double pointsPercentLeftByDays(int days){
         double pointsPercentLeft = 100;
         for (int i = 0; i < days; i++) {
-            pointsPercentLeft *= 0.999;
+            pointsPercentLeft *= 0.9998;
 //            System.out.println("Perc in day " + i + " : " + pointsPercentLeft);
         }
         return pointsPercentLeft;

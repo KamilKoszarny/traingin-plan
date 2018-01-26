@@ -7,52 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94e82e70-2175-4cf1-9e84-ac736b49097b" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Plan.xlsx" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/TrainingPlan_jar/Plan.xlsx" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/TrainingPlan_jar/skillsHistories.ser" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$12.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/style.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/Plan.xlsx" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/style.css" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/TrainingPlan.jar - Shortcut.lnk" afterPath="" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/TrainingPlan_jar/TrainingPlan.jar" afterPath="$PROJECT_DIR$/out/artifacts/TrainingPlan_jar/TrainingPlan.jar" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$1.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$10.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$10.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$11.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$11.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$12.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$13.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$13.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$14.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$2.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$2.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$3.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$3.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$4.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$4.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$5.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$5.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$6.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$6.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$7.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$7.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$8.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$8.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$9$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$9.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$9.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/SkillItem.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/SkillItem.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/fxml/MainWindow.fxml" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/fxml/MainWindow.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/main/App.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/main/App.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/main/SkillsManager.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/main/SkillsManager.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TrainingPlan_jar/skillsHistories.ser" afterPath="$PROJECT_DIR$/out/artifacts/TrainingPlan_jar/skillsHistories.ser" />
       <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/skills/Skill.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/skills/Skill.class" />
       <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillCalculator.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillCalculator.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsHistories$SkillHistory$SkillMoment.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsHistories$SkillHistory$SkillMoment.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsHistories$SkillHistory.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsHistories$SkillHistory.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsLoadSaver.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsLoadSaver.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsReqImporter.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsReqImporter.class" />
-      <change beforePath="$PROJECT_DIR$/resources/fxml/MainWindow.fxml" afterPath="$PROJECT_DIR$/resources/fxml/MainWindow.fxml" />
-      <change beforePath="$PROJECT_DIR$/skillsHistories.ser" afterPath="$PROJECT_DIR$/skillsHistories.ser" />
-      <change beforePath="$PROJECT_DIR$/src/controller/PaneController.java" afterPath="$PROJECT_DIR$/src/controller/PaneController.java" />
-      <change beforePath="$PROJECT_DIR$/src/controller/SkillItem.java" afterPath="$PROJECT_DIR$/src/controller/SkillItem.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/App.java" afterPath="$PROJECT_DIR$/src/main/App.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/SkillsManager.java" afterPath="$PROJECT_DIR$/src/main/SkillsManager.java" />
       <change beforePath="$PROJECT_DIR$/src/skills/Skill.java" afterPath="$PROJECT_DIR$/src/skills/Skill.java" />
       <change beforePath="$PROJECT_DIR$/src/skills/SkillCalculator.java" afterPath="$PROJECT_DIR$/src/skills/SkillCalculator.java" />
-      <change beforePath="$PROJECT_DIR$/src/skills/SkillsHistories.java" afterPath="$PROJECT_DIR$/src/skills/SkillsHistories.java" />
-      <change beforePath="$PROJECT_DIR$/src/skills/SkillsLoadSaver.java" afterPath="$PROJECT_DIR$/src/skills/SkillsLoadSaver.java" />
-      <change beforePath="$PROJECT_DIR$/src/skills/SkillsReqImporter.java" afterPath="$PROJECT_DIR$/src/skills/SkillsReqImporter.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="27" column="43" lean-forward="false" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+            <state relative-caret-position="544">
+              <caret line="41" column="5" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
               <folding>
                 <element signature="method#disableWarning#0;class#App#0" expanded="false" />
               </folding>
@@ -79,7 +40,7 @@
       <file leaf-file-name="SkillsManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/SkillsManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="323">
               <caret line="22" column="47" lean-forward="false" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
               <folding />
             </state>
@@ -89,25 +50,18 @@
       <file leaf-file-name="PaneController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/PaneController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="257" column="43" lean-forward="true" selection-start-line="257" selection-start-column="43" selection-end-line="257" selection-end-column="43" />
-              <folding>
-                <element signature="e#2874#2875#0" expanded="true" />
-                <element signature="e#2919#2920#0" expanded="true" />
-                <element signature="e#8721#8722#0" expanded="true" />
-                <element signature="e#8793#8794#0" expanded="true" />
-                <element signature="e#14141#14142#0" expanded="true" />
-                <element signature="e#14204#14205#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="3859">
+              <caret line="257" column="43" lean-forward="false" selection-start-line="257" selection-start-column="43" selection-end-line="257" selection-end-column="43" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Skill.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Skill.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/skills/Skill.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="213" column="45" lean-forward="false" selection-start-line="213" selection-start-column="45" selection-end-line="213" selection-end-column="45" />
+            <state relative-caret-position="-935">
+              <caret line="95" column="39" lean-forward="true" selection-start-line="95" selection-start-column="39" selection-end-line="95" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -134,8 +88,8 @@
             <state relative-caret-position="289">
               <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
               <folding>
-                <element signature="e#921#922#0" expanded="true" />
-                <element signature="e#973#974#0" expanded="true" />
+                <element signature="e#922#923#0" expanded="true" />
+                <element signature="e#974#975#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -144,7 +98,7 @@
       <file leaf-file-name="SkillsReqImporter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/skills/SkillsReqImporter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
+            <state relative-caret-position="550">
               <caret line="180" column="38" lean-forward="false" selection-start-line="180" selection-start-column="38" selection-end-line="180" selection-end-column="38" />
               <folding>
                 <element signature="method#SkillsReqImporter#0;class#SkillsReqImporter#0" expanded="false" />
@@ -163,7 +117,7 @@
       <file leaf-file-name="SkillsLoadSaver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/skills/SkillsLoadSaver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
+            <state relative-caret-position="550">
               <caret line="34" column="21" lean-forward="false" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
               <folding />
             </state>
@@ -210,11 +164,13 @@
       <find>system</find>
       <find>incre</find>
       <find>color</find>
+      <find>),</find>
     </findStrings>
     <replaceStrings>
       <replace>,</replace>
       <replace>&quot;,</replace>
       <replace>Tree</replace>
+      <replace>, 1),</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -271,18 +227,18 @@
         <option value="$PROJECT_DIR$/resources/fxml/MainWindow.fxml" />
         <option value="$PROJECT_DIR$/src/skills/SkillHistory.java" />
         <option value="$PROJECT_DIR$/src/skills/Project.java" />
-        <option value="$PROJECT_DIR$/src/main/App.java" />
         <option value="$PROJECT_DIR$/src/skills/SkillsHistories.java" />
         <option value="$PROJECT_DIR$/src/skills/SkillsLoadSaver.java" />
         <option value="$PROJECT_DIR$/src/skills/SkillsReqImporter.java" />
-        <option value="$PROJECT_DIR$/src/skills/SkillCalculator.java" />
         <option value="$PROJECT_DIR$/src/main/SkillsManager.java" />
-        <option value="$PROJECT_DIR$/src/skills/Skill.java" />
         <option value="$PROJECT_DIR$/src/controller/PaneController.java" />
+        <option value="$PROJECT_DIR$/src/skills/SkillCalculator.java" />
+        <option value="$PROJECT_DIR$/src/main/App.java" />
+        <option value="$PROJECT_DIR$/src/skills/Skill.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -306,6 +262,22 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="TrainingPlan" type="cbb8eebc:String" user="TrainingPlan" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="TrainingPlan" type="cbb8eebc:String" user="TrainingPlan" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -318,6 +290,7 @@
         </subPane>
       </pane>
       <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -380,29 +353,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="TrainingPlan" type="cbb8eebc:String" user="TrainingPlan" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="TrainingPlan" type="cbb8eebc:String" user="TrainingPlan" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jdbc1" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -550,12 +506,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32753164" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32753164" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -696,13 +652,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/skills/SkillHistory.java" />
     <entry file="file://$PROJECT_DIR$/resources/fxml/MainWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="27" column="69" lean-forward="false" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/skills/Project.java">
@@ -710,17 +666,6 @@
         <state relative-caret-position="221">
           <caret line="30" column="24" lean-forward="false" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/skills/SkillCalculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-          <folding>
-            <element signature="e#921#922#0" expanded="true" />
-            <element signature="e#973#974#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -735,25 +680,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/skills/SkillsLoadSaver.java">
+    <entry file="file://$PROJECT_DIR$/src/main/SkillsManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="34" column="21" lean-forward="false" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+        <state relative-caret-position="323">
+          <caret line="22" column="47" lean-forward="false" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/SkillsManager.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/PaneController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="47" lean-forward="false" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+        <state relative-caret-position="3859">
+          <caret line="257" column="43" lean-forward="false" selection-start-line="257" selection-start-column="43" selection-end-line="257" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/skills/SkillCalculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding>
+            <element signature="e#922#923#0" expanded="true" />
+            <element signature="e#974#975#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="41" column="5" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+          <folding>
+            <element signature="method#disableWarning#0;class#App#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/skills/SkillsLoadSaver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="34" column="21" lean-forward="false" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/skills/SkillsReqImporter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
+        <state relative-caret-position="550">
           <caret line="180" column="38" lean-forward="false" selection-start-line="180" selection-start-column="38" selection-end-line="180" selection-end-column="38" />
           <folding>
             <element signature="method#SkillsReqImporter#0;class#SkillsReqImporter#0" expanded="false" />
@@ -770,35 +744,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/skills/Skill.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="213" column="45" lean-forward="false" selection-start-line="213" selection-start-column="45" selection-end-line="213" selection-end-column="45" />
+        <state relative-caret-position="-935">
+          <caret line="95" column="39" lean-forward="true" selection-start-line="95" selection-start-column="39" selection-end-line="95" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/PaneController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="257" column="43" lean-forward="true" selection-start-line="257" selection-start-column="43" selection-end-line="257" selection-end-column="43" />
-          <folding>
-            <element signature="e#2874#2875#0" expanded="true" />
-            <element signature="e#2919#2920#0" expanded="true" />
-            <element signature="e#8721#8722#0" expanded="true" />
-            <element signature="e#8793#8794#0" expanded="true" />
-            <element signature="e#14141#14142#0" expanded="true" />
-            <element signature="e#14204#14205#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="27" column="43" lean-forward="false" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
-          <folding>
-            <element signature="method#disableWarning#0;class#App#0" expanded="false" />
           </folding>
         </state>
       </provider>
