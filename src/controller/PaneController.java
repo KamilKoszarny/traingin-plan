@@ -180,13 +180,13 @@ public class PaneController {
                 stackPane.prefWidthProperty().bind(widthProperty);
                 stackPane.prefHeightProperty().bind(heightProperty);
 
-                ProgressBar progressBar = new ProgressBar(param.getValue().getValue().getPointsInPercent());
+                ProgressBar progressBar = new ProgressBar(param.getValue().getValue().getPointsFactor()*.95 + .025);
                 progressBar.prefWidthProperty().bind(widthProperty);
 
                 stackPane.getChildren().add(progressBar);
                 for (ReqLvl reqLvl: ReqLvl.values()) {
                     Line line = new Line( 0, 0, 0, stackPane.getPrefHeight());
-                    line.setTranslateX((param.getValue().getValue().getReqPointsForLevel(reqLvl)-50)/100. * widthProperty.getValue() - 3);
+                    line.setTranslateX((param.getValue().getValue().getReqPointsForLevel(reqLvl)-50)/100. * widthProperty.getValue()*.95 + 0.025);
                     line.setStroke(reqLvl.getColor());
                     if (reqLvl == SkillItem.reqLvl)
                         line.setStrokeWidth(3);

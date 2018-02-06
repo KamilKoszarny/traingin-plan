@@ -61,7 +61,7 @@ class SkillItem {
         return new SimpleDoubleProperty(skill.getReqPoints()[reqLvl.ordinal()]);
     }
 
-    public double getPointsInPercent(){
+    public double getPointsFactor(){
         return skill.getPoints() / 100.;
     }
 
