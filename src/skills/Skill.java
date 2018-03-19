@@ -119,6 +119,7 @@ JAVA ("Java", 0, null, 8, 1),
 
     OTHER_LANGUAGES("Other languages", 1, JAVA, 4, 1),
         JS("JavaScript", 2, OTHER_LANGUAGES, 8, 0.8),
+            JS_CORE("Core" ,3 , JS, 10, 1),
             JS_FRAMEWORKS("JS Frameworks", 3, JS, 7, 1),
                 ANGULAR("Angular", 4, JS_FRAMEWORKS, 8, 1),
                 REACT("React", 4, JS_FRAMEWORKS, 7, 1),

@@ -7,47 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94e82e70-2175-4cf1-9e84-ac736b49097b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/TrainingPlan_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/TrainingPlan_jar.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/TrainingPlan_jar/TrainingPlan.jar" afterPath="$PROJECT_DIR$/out/artifacts/TrainingPlan_jar/TrainingPlan.jar" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/TrainingPlan_jar/skillsHistories.ser" afterPath="$PROJECT_DIR$/out/artifacts/TrainingPlan_jar/skillsHistories.ser" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/NumberTextField$1.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/NumberTextField$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/NumberTextField.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/NumberTextField.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$1.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$10$1.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$10$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$10.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$10.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$11.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$11.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$12.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$12.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$13.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$13.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$14.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$14.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$15.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$15.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$2.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$2.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$3.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$3.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$4.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$4.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$5.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$5.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$6.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$6.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$7.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$7.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$8.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$8.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$9.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController$9.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/PaneController.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/SkillItem.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/SkillItem.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/controller/SkillItemsGenerator.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/controller/SkillItemsGenerator.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/main/App.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/main/App.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/main/SkillsManager.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/main/SkillsManager.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/skills/Project$ProjectsSet.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/skills/Project$ProjectsSet.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/skills/Project.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/skills/Project.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/skills/ReqLvl.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/skills/ReqLvl.class" />
       <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/skills/Skill.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/skills/Skill.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillCalculator.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillCalculator.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsHistories$SkillHistory$SkillMoment.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsHistories$SkillHistory$SkillMoment.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsHistories$SkillHistory.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsHistories$SkillHistory.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsHistories.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsHistories.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsLoadSaver.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsLoadSaver.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsReqImporter.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsReqImporter.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsSet.class" afterPath="$PROJECT_DIR$/out/production/TrainingPlan/skills/SkillsSet.class" />
-      <change beforePath="$PROJECT_DIR$/src/controller/PaneController.java" afterPath="$PROJECT_DIR$/src/controller/PaneController.java" />
-      <change beforePath="$PROJECT_DIR$/src/controller/SkillItem.java" afterPath="$PROJECT_DIR$/src/controller/SkillItem.java" />
       <change beforePath="$PROJECT_DIR$/src/skills/Skill.java" afterPath="$PROJECT_DIR$/src/skills/Skill.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -108,8 +71,8 @@
       <file leaf-file-name="Skill.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/skills/Skill.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="96" column="37" lean-forward="false" selection-start-line="96" selection-start-column="37" selection-end-line="96" selection-end-column="37" />
+            <state relative-caret-position="401">
+              <caret line="135" column="54" lean-forward="true" selection-start-line="135" selection-start-column="54" selection-end-line="135" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -312,6 +275,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -374,6 +338,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -385,8 +350,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -552,6 +515,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -576,7 +540,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="15" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32753164" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32753164" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32753164" sideWeight="0.4956076" order="5" side_tool="false" content_ui="tabs" />
@@ -663,13 +627,13 @@
     <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/AbstractCollection.java" />
     <entry file="file://$PROJECT_DIR$/src/skills/SkillHistory.java" />
     <entry file="file://$PROJECT_DIR$/resources/fxml/MainWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="27" column="69" lean-forward="false" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/skills/Project.java">
@@ -757,8 +721,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/skills/Skill.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="96" column="37" lean-forward="false" selection-start-line="96" selection-start-column="37" selection-end-line="96" selection-end-column="37" />
+        <state relative-caret-position="401">
+          <caret line="135" column="54" lean-forward="true" selection-start-line="135" selection-start-column="54" selection-end-line="135" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
